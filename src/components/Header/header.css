@@ -1,0 +1,55 @@
+@font-face {
+  font-family: Tertius Sans;
+  src: url(../../assets/fonts/HelveticaNeueMedium.otf);
+}
+
+header * {
+  font-family: "Tertius Sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #000;
+}
+
+header {
+  height: 72px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  background: #fff;
+  position: sticky;
+  top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  gap: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+}
+
+#logo {
+  margin-right: 200px;
+}
+
+nav ul li {
+  transition: all ease .5s;
+}
+
+nav ul:hover li {
+  opacity: 1;
+}
+
+nav ul:hover li:not(:hover) {
+  opacity: .3;
+}

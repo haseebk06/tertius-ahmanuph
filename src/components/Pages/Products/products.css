@@ -1,0 +1,124 @@
+@font-face {
+  font-family: Tertius Sans;
+  src: url(../../../assets/fonts/HelveticaNeueMedium.otf);
+}
+
+.product-detail * {
+  font-family: "Tertius Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #000;
+}
+
+.product-detail {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.product-detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.porduct-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.porduct-descripion {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.size-guide {
+  text-decoration: underline;
+}
+
+.btn-size {
+  background-color: #fff;
+  transition-duration: 0.2s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1.5rem;
+  border-top: solid;
+  border-top-color: #000;
+  border-top-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-size::after {
+  content: "";
+  background-color: #000;
+  border-radius: 50%;
+  height: 0.75rem;
+  width: 0.75rem;
+  display: block;
+}
+
+.btn-size:hover {
+  background-color: #e5e5e5;
+}
+
+.btn-add-to-cart {
+  background-color: #fff;
+  transition-duration: 0.2s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1.5rem;
+  border-top: solid;
+  border-top-color: #000;
+  border-top-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.btn-add-to-cart::after {
+  content: "";
+  background-color: #000;
+  border-radius: 50%;
+  height: 0.75rem;
+  width: 0.75rem;
+  display: block;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-add-to-cart:hover::after {
+  background-color: #fff;
+}
+
+.related-products {
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
