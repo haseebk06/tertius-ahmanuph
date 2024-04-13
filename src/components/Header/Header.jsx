@@ -2,7 +2,7 @@ import "./header.css";
 import logo from "../../logo.png";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ toggleCart }) => {
   return (
     <>
       <header className="d-flex align-items-center justify-content-between">
@@ -27,8 +27,8 @@ const Header = () => {
             <img src={logo} id="logo" alt="logo" width={150} />
           </NavLink>
         </div>
-        <button className="d-block">
-          <a href="#">Cart ( 0 )</a>
+        <button className="d-block" onClick={toggleCart}>
+          Cart ( 0 )
         </button>
       </header>
     </>

@@ -99,6 +99,9 @@ const Products = () => {
   const relatedProducts = products.filter((item) => item.id !== id);
 
   const [cursorStyle, setCursorStyle] = useState("pointer");
+  const [showSizes, setShowSizes] = useState(false);
+  const [sizes, setSizes] = useState("S");
+  const [sizeGuide, setSizeGuide] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const imageRef = useRef(null);
 
@@ -154,12 +157,176 @@ const Products = () => {
               </div>
               <div className="foot">
                 <p className="porduct-descripion w-50">{product.description}</p>
-                <button className="size-guide">Size Guide</button>
+                <button
+                  className="size-guide"
+                  onClick={() => setSizeGuide(true)}
+                >
+                  Size Guide
+                </button>
+
+                <div
+                  className={`z-50 position-relative ${
+                    sizeGuide ? "d-flex" : "d-none"
+                  }`}
+                  onClick={() => setSizeGuide(false)}
+                >
+                  <div className="position-fixed w-100 z-50 modal-bg">
+                    <div className="d-flex align-items-center justify-content-center text-center modal-inner">
+                      <div className="position-relative bg-white modal-in">
+                        <div
+                          className="position-absolute modal-inn"
+                          onClick={() => setSizeGuide(false)}
+                        >
+                          &times;
+                        </div>
+                        <div className="d-flex justify-content-between text-xs">
+                          <h4>Size Guide</h4>
+                          <div>{product.title}</div>
+                        </div>
+                        <div className="sizeguide-table">
+                          <table className="table border border-dark">
+                            <tbody className="table-body">
+                              <tr>
+                                <th>
+                                  <p>SIZE</p>
+                                </th>
+                                <th>
+                                  <p>Width(in)</p>
+                                </th>
+                                <th>
+                                  <p>Length(in)</p>
+                                </th>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p>S</p>
+                                </td>
+                                <td>
+                                  <p>25.5</p>
+                                </td>
+                                <td>
+                                  <p>27.5</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p>M</p>
+                                </td>
+                                <td>
+                                  <p>27</p>
+                                </td>
+                                <td>
+                                  <p>28</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p>L</p>
+                                </td>
+                                <td>
+                                  <p>28</p>
+                                </td>
+                                <td>
+                                  <p>28.75</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p>XL</p>
+                                </td>
+                                <td>
+                                  <p>30.5</p>
+                                </td>
+                                <td>
+                                  <p>29.5</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p>XXL</p>
+                                </td>
+                                <td>
+                                  <p>32.5</p>
+                                </td>
+                                <td>
+                                  <p>30.5</p>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div id="Size" className="position-relative">
-                  <button type="button" className="btn-size text-center w-100">
-                    Size:S
+                  <button
+                    type="button"
+                    className="btn-size text-center w-100"
+                    onClick={() => setShowSizes(!showSizes)}
+                  >
+                    Size: {sizes}
                   </button>
+
+                  <div
+                    className={`position-absolute w-100 border border-dark bg-white ${
+                      showSizes ? "d-grid" : "d-none"
+                    }`}
+                    id="sizes"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSizes("S");
+                        setShowSizes(false);
+                      }}
+                      className="w-100 position-relative border border-dark border-start-0 border-top-0 all-sizes"
+                    >
+                      S
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSizes("M");
+                        setShowSizes(false);
+                      }}
+                      className="w-100 position-relative border border-dark border-top-0 border-start-0 border-end-0 all-sizes"
+                    >
+                      M
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSizes("L");
+                        setShowSizes(false);
+                      }}
+                      className="w-100 border border-dark border-top-0 border-start-0 position-relative all-sizes"
+                    >
+                      L
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSizes("XL");
+                        setShowSizes(false);
+                      }}
+                      className="w-100 border border-dark border-top-0 border-start-0 border-end-0 position-relative all-sizes"
+                    >
+                      XL
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSizes("XXL");
+                        setShowSizes(false);
+                      }}
+                      className="w-100 border border-dark border-top-0 border-start-0 border-bottom-0 position-relative all-sizes"
+                    >
+                      XXL
+                    </button>
+                  </div>
+
                   <button
                     type="button"
                     className="btn-add-to-cart text-center w-100"
