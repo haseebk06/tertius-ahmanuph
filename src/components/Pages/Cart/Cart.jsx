@@ -1,7 +1,10 @@
 import "./cart.css";
-import front2Magnet from "../../../assets/products/front2_magnet.png";
 
 const Cart = ({showCart, closeCart}) => {
+
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = cartItems.reduce((total, item) => total + (item.quantity * item.price), 0);
 
   return (
     <>
@@ -10,7 +13,7 @@ const Cart = ({showCart, closeCart}) => {
           <div className="vh-100 d-flex flex-column">
             <div className="border-bottom h-18 border-dark d-flex align-items-center justify-content-between">
               <button className="antialiased" onClick={closeCart}>Close</button>
-              <button className="antialiased">Cart (0)</button>
+              <button className="antialiased">Cart ({totalQuantity})</button>
               <button className="antialiased d-none">Cart (0)</button>
               <button className="antialiased d-none text-neutral-300">
                 Close
@@ -18,10 +21,11 @@ const Cart = ({showCart, closeCart}) => {
             </div>
             <section className="overflow-y-scroll scrollbar-hidden antialiased">
               <ul className="d-flex flex-column">
+              {cartItems.map((carts) => (
                 <li className="d-flex justify-content-between antialiased border-bottom border-dark">
                   <div className="w-50" style={{ marginRight: "1.5rem" }}>
                     <img
-                      src={front2Magnet}
+                      src={carts.image}
                       alt="cart image"
                       className="cart-img"
                     />
@@ -30,9 +34,9 @@ const Cart = ({showCart, closeCart}) => {
                     <div className="grid gap-2">
                       <h3 className="whitespace-pre-wrap w-100">
                         <span className="whitespace-pre-wra">
-                          SO FAR GONE MAGNETIC LETTER SET - RED
+                          {carts.title}
                         </span>
-                        <div>$8.00</div>
+                        <div>{carts.price}</div>
                       </h3>
                       <div className="d-flex align-items-center" style={{marginTop:"-30px"}}>
                         <label className="sr-only">Quantity, 1</label>
@@ -58,7 +62,7 @@ const Cart = ({showCart, closeCart}) => {
                             </button>
                           </form>
                           <div className="h-100 antialiased d-flex align-items-center justify-content-center cart-value">
-                            1
+                            {carts.quantity}
                           </div>
                           <form
                             action=""
@@ -83,6 +87,7 @@ const Cart = ({showCart, closeCart}) => {
                     </div>
                   </div>
                 </li>
+              ))}
               </ul>
             </section>
             <section>
@@ -92,7 +97,7 @@ const Cart = ({showCart, closeCart}) => {
                   data-test="subtotal"
                   className="whitespace-pre-wrap antialiased"
                 >
-                  <div>$118.00</div>
+                  <div>${totalPrice.toFixed(2)}</div>
                 </dd>
               </div>
               <div className="d-flex flex-column">

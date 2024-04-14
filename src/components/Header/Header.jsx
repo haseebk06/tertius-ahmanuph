@@ -2,7 +2,12 @@ import "./header.css";
 import logo from "../../logo.png";
 import { NavLink } from "react-router-dom";
 
-const Header = ({ toggleCart }) => {
+
+const Header = ({ toggleCart, cartQuantity }) => {
+
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <>
       <header className="d-flex align-items-center justify-content-between">
@@ -28,7 +33,7 @@ const Header = ({ toggleCart }) => {
           </NavLink>
         </div>
         <button className="d-block" onClick={toggleCart}>
-          Cart ( 0 )
+          Cart ( {totalQuantity} )
         </button>
       </header>
     </>

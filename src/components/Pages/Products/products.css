@@ -112,6 +112,27 @@
   background-color: #fff;
 }
 
+.added-to-cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 72px;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 0.5s;
+  transition-property: transform;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.translate-full {
+  transform: translate(0, -100%) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.translate-0 {
+  transform: translate(0, 0) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+}
+
 .related-products {
   font-size: 1rem;
   line-height: 2rem;

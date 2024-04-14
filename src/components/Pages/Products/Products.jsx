@@ -101,6 +101,7 @@ const Products = () => {
   const [cursorStyle, setCursorStyle] = useState("pointer");
   const [showSizes, setShowSizes] = useState(false);
   const [sizes, setSizes] = useState("S");
+  const [isCartAdded, setisCartAdded] = useState(false);
   const [sizeGuide, setSizeGuide] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const imageRef = useRef(null);
@@ -131,6 +132,39 @@ const Products = () => {
     }
   };
 
+  const handleAddToCart = () => {
+
+    setisCartAdded(isCartAdded => !isCartAdded);
+
+    setTimeout(() => {
+      setisCartAdded(isCartAdded => !isCartAdded);
+    }, 2000);
+
+    const productData = {
+      image: product.image[currentImageIndex],
+      title: product.title,
+      price: product.price,
+      quantity: 1, 
+    };
+
+    const existingCartItems =
+      JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    const existingProductIndex = existingCartItems.findIndex(
+      (item) => item.title === product.title
+    );
+
+    if (existingProductIndex !== -1) {
+      existingCartItems[existingProductIndex].quantity += 1;
+    } else {
+      existingCartItems.push(productData);
+    }
+
+    localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
+
+    console.log("Product added to cart:", productData);
+  };
+
   return (
     <>
       <Container fluid className="product-detail">
@@ -151,6 +185,7 @@ const Products = () => {
           </Col>
           <Col>
             <section className="d-flex flex-column justify-content-between h-100">
+              <div class={`w-100 bg-dark d-flex align-items-center justify-content-center text-white z-50 antialiased added-to-cart ${isCartAdded ? 'translate-0' : 'translate-full'}`}>Product added to cart</div>
               <div className="head">
                 <h1 className="product-title">{product.title}</h1>
                 <h2 className="product-price">{product.price}</h2>
@@ -329,6 +364,7 @@ const Products = () => {
 
                   <button
                     type="button"
+                    onClick={handleAddToCart}
                     className="btn-add-to-cart text-center w-100"
                   >
                     Add To Cart
