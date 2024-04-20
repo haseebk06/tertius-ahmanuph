@@ -1,15 +1,64 @@
-  
-  main#home * {
-    font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    color: #000;
-  }
+main#home * {
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #000;
+}
 
-  #home h1 {
-    font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 5rem;
-    padding: 3rem;
-    /* line-height: 1.5rem; */
-    color: #000;
+#home h2 {
+  font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 1rem + 6.8966vw, 3rem);
+  color: #000;
+}
+
+.about-image img {
+  width: 100%;
+}
+
+.about-image {
+  margin: auto;
+}
+
+.about-text {
+  margin: auto;
+}
+
+.about-text p {
+  font-size: clamp(1rem, 1rem + 6.8966vw, 1.5rem);
+}
+
+.about-blob {
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  background: #000;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  float: right;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.album-img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+
+.album-disc {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 10rem;
+  width: 70%;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
+}

@@ -8,8 +8,8 @@ header * {
 
 header {
   height: 72px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   background: #fffafa;
   position: sticky;
