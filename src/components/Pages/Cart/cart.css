@@ -1,12 +1,7 @@
-@font-face {
-  font-family: Tertius Sans;
-  src: url(../../../assets/fonts/HelveticaNeueMedium.otf);
-}
-
 .cart-container * {
-  font-family: "Tertius Sans", Helvetica, Arial, sans-serif;
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.5rem;
   color: #000;
 }
@@ -31,7 +26,7 @@
   padding-top: 10px;
   padding-bottom: 5rem;
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: #FFFAFA;
   max-width: 24rem;
   height: 100%;
   z-index: 41;

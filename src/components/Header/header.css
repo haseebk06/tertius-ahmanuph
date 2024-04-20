@@ -1,10 +1,5 @@
-@font-face {
-  font-family: Tertius Sans;
-  src: url(../../assets/fonts/HelveticaNeueMedium.otf);
-}
-
 header * {
-  font-family: "Tertius Sans", Helvetica, Arial, sans-serif;
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -16,8 +11,9 @@ header {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  background: #fff;
+  background: #FFFAFA;
   position: sticky;
+  z-index: 40;
   top: 0;
 }
 
@@ -32,7 +28,6 @@ a {
 }
 
 button {
-  -webkit-appearance: button;
   background-color: transparent;
   background-image: none;
   border: none;

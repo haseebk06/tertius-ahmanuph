@@ -1,12 +1,8 @@
-@font-face {
-    font-family: Tertius Sans;
-    src: url(../../../assets/fonts/HelveticaNeueMedium.otf);
-  }
-  
   h1 {
-    font-family: "Tertius Sans", Helvetica, Arial, sans-serif;
+    font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 5rem;
+    padding: 3rem;
     /* line-height: 1.5rem; */
     color: #000;
   }

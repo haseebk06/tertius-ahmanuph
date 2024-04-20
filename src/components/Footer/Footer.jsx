@@ -1,13 +1,19 @@
 import "./footer.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import footerLogo from "../../assets/img/Footer-logo-img.png";
 
 const Footer = () => {
   return (
     <>
       <footer>
-        <Container fluid>
+        <Container className="pb-5" fluid>
           <Row>
+            <Col md="12">
+              <figure className="footer-logo py-3">
+                <img src={footerLogo} alt="Footer Logo" />
+              </figure>
+            </Col>
             <Col>
               <p className="text-base">Subscribe</p>
               <p className="text-xs">
