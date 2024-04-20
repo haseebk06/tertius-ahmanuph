@@ -181,3 +181,9 @@
   width: 0.75rem;
   display: block;
 }
+
+@media (max-width: 768px) {
+  .cart-container{
+    width: 100%;
+  }
+}

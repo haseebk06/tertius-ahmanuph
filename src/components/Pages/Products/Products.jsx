@@ -169,7 +169,7 @@ const Products = () => {
     <>
       <Container fluid className="product-detail">
         <Row>
-          <Col>
+          <Col xs="12" sm="12" md="6" xl="6">
             <figure>
               <img
                 src={product.image[currentImageIndex]}
@@ -183,7 +183,7 @@ const Products = () => {
               />
             </figure>
           </Col>
-          <Col>
+          <Col xs="12" sm="12" md="6" xl="6">
             <section className="d-flex flex-column justify-content-between h-100">
               <div class={`w-100 bg-dark d-flex align-items-center justify-content-center text-white z-50 antialiased added-to-cart ${isCartAdded ? 'translate-0' : 'translate-full'}`}>Product added to cart</div>
               <div className="head">
