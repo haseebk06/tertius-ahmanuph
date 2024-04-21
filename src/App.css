@@ -8,6 +8,11 @@
   src: url(assets/fonts/GrandCru-LightS/GrandCru-LightS.otf);
 }
 
+@font-face {
+  font-family: Tertius Sans Italic;
+  src: url(assets/fonts/Aloja-Extended/Aloja-Extended.ttf);
+}
+
 ::selection {
     background: #000;
     color: #FFFAFA;
