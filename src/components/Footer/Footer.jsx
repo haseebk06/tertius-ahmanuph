@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <Container className="pb-5" fluid>
+        <Container className="pb-5 footer-container" fluid>
           <Row>
             <Col md="12">
               <figure className="footer-logo py-3">

@@ -13,15 +13,26 @@
   src: url(assets/fonts/Aloja-Extended/Aloja-Extended.ttf);
 }
 
+:root {
+  --light-beige: #fefaf7;
+  --dark-bluey: #363b4e;
+  --coral: #e57962;
+  --dark-beige: #e5c5a5;
+  --light-bluey: #6370a1;
+  --middle-beige: #f9eee6;
+  --white: #fff;
+  --black: #000;
+}
+
 ::selection {
-    background: #000;
-    color: #FFFAFA;
+  background: var(--black);
+  color: var(--white);
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 body {
-    background: #FFFAFA;
+  background: var(--light-beige);
 }
