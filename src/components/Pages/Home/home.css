@@ -20,13 +20,14 @@ h2 {
   background: url("../../../assets/img/hero-img.jpg");
   background-size: 180%;
   background-position: center;
+  background-repeat: no-repeat;
   transition: 0.5s;
 }
 
 #home h2 {
   font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(1rem, 1rem + 6.8966vw, 3rem);
+  font-size: clamp(1rem, -2.3333rem + 11.1111vw, 3rem);
   color: #000;
 }
 
@@ -40,7 +41,7 @@ h2 {
 #hero-section h2 span {
   font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(1rem, 1rem + 6.8966vw, 3rem);
+  font-size: clamp(1rem, -2.3333rem + 11.1111vw, 3rem);
   color: #fffafa;
   margin: 0 20px;
 }
@@ -75,7 +76,6 @@ h2 {
 .about-text {
   margin: auto;
   margin-top: 20px;
-  word-break: break-all;
 }
 
 .about-text span {
@@ -322,7 +322,7 @@ img {
   z-index: 3;
 }
 
-.albums-img figcaption a{
+.albums-img figcaption a {
   color: var(--white) !important;
 }
 
@@ -354,25 +354,25 @@ figure {
 .mosaic-gallery {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .mosaic-row {
   display: flex;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .mosaic-item {
   object-fit: cover;
 }
 
-.two a{
+.two a {
   width: 33.33%;
   height: 644.95px;
 }
 
-.two .mosaic-item{
-  width: 100%;  
+.two .mosaic-item {
+  width: 100%;
 }
 
 #imgFour {
@@ -388,11 +388,23 @@ figure {
 }
 
 #contact {
-  padding:5rem 0;
+  padding: 5rem 0;
   background: var(--dark-bluey);
   color: var(--white) !important;
 }
-#contact *{
+#contact * {
   color: var(--white) !important;
 }
 
+
+@media (max-width: 480px) {
+  .two a {
+    height: 200.95px !important;
+  }
+  .about-image img {
+    width: 200px !important;
+  }
+  .about-image::after {
+    /* width: 200px !important; */
+  }
+}

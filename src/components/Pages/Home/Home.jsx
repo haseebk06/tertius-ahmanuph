@@ -130,19 +130,20 @@ const Home = () => {
         <section id="about" className="py-5" ref={(el) => (aboutSec = el)}>
           <Container fluid>
             <Row>
-              <Col xs="12" sm="4" md="4" xl="4" className="main-container">
+              <Col xs="12" sm="12" md="12" xl="4" className="main-container">
                 <figure className="about-image">
                   <img
                     src={imageOne}
                     alt="Shadera's about image"
                     ref={(el) => (image = el)}
+                    style={{width: "100%"}}
                   />
                 </figure>
               </Col>
               <Col
                 xs="12"
-                sm="8"
-                md="8"
+                sm="12"
+                md="12"
                 xl="8"
                 className="about-text"
                 ref={(el) => (content = el)}
