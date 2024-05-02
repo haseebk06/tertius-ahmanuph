@@ -14,15 +14,20 @@ import albumThree from "../../../assets/img/album_3.jpg";
 import albumFour from "../../../assets/img/album_4.jpg";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import Fancybox from "../Fancybox.jsx";
-import gallaryImgOne from "../../../assets/img/image1.jpeg";
-import gallaryImgTwo from "../../../assets/img/image6.jpeg";
-import gallaryImgThree from "../../../assets/img/image7.jpeg";
-import gallaryImgFour from "../../../assets/img/image8.jpeg";
-import gallaryImgFive from "../../../assets/img/image9.jpeg";
+import gallaryImgOne from "./images/image1.jpeg";
+import gallaryImgTwo from "./images/image2.jpeg";
+import gallaryImgThree from "./images/image3.jpeg";
+import gallaryImgThirteen from "./images/image13.jpeg";
+import gallaryImgTwelve from "./images/image12.jpeg";
+import gallaryImgFour from "./images/image4.jpeg";
+import gallaryImgFive from "./images/image5.jpeg";
+import gallaryImgSix from "./images/image6.jpeg";
+import gallaryImgSeven from "./images/image7.jpeg";
 import fb from "../../../assets/img/facebook-2.svg";
 import insta from "../../../assets/img/instagram.svg";
 import x from "../../../assets/img/twitter-x.svg";
 import tube from "../../../assets/img/youtube.svg";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +40,7 @@ const Home = () => {
   let imageReveal = CSSRulePlugin.getRule(".about-image:after");
 
   useEffect(() => {
-    const headLineFirst = content.children[0].children[0];
+    const headLineFirst = content.children[1].children[0];
     const headLineSecond = headLineFirst.nextSibling;
     const headLineThird = headLineSecond.nextSibling;
     const headLineFourth = headLineThird.nextSibling;
@@ -130,24 +135,23 @@ const Home = () => {
         <section id="about" className="py-5" ref={(el) => (aboutSec = el)}>
           <Container fluid>
             <Row>
-              <Col xs="12" sm="12" md="12" xl="4" className="main-container">
-                <figure className="about-image">
-                  <img
-                    src={imageOne}
-                    alt="Shadera's about image"
-                    ref={(el) => (image = el)}
-                    style={{width: "100%"}}
-                  />
-                </figure>
-              </Col>
               <Col
                 xs="12"
                 sm="12"
                 md="12"
+                lg="12"
                 xl="8"
-                className="about-text"
+                className="about-text d-flex flex-column align-items-center"
                 ref={(el) => (content = el)}
               >
+                <h2
+                  className="about-blob"
+                  ref={(el) => {
+                    aboutMe = el;
+                  }}
+                >
+                  About Me
+                </h2>
                 <p className="about-inner">
                   <div className="content-line">
                     <div className="content-line-inner">
@@ -185,14 +189,17 @@ const Home = () => {
                     </div>
                   </div>
                 </p>
-                <h2
-                  className="about-blob"
-                  ref={(el) => {
-                    aboutMe = el;
-                  }}
-                >
-                  About Me
-                </h2>
+              </Col>
+
+              <Col xs="12" sm="12" md="12" lg="12" xl="4" className="main-container">
+                <div className="about-image">
+                  <img
+                    src={imageOne}
+                    alt="Shadera's about image"
+                    ref={(el) => (image = el)}
+                    style={{ width: "100%" }}
+                  />
+                </div>
               </Col>
             </Row>
           </Container>
@@ -301,7 +308,7 @@ const Home = () => {
                 </Col>
               </Row>
             </Container>
-            <div class="d-flex align-items-end albums-img position-relative">
+            <div class="d-flex align-items-center justify-content-center albums-img position-relative">
               <figure>
                 <img src={albumOne} alt="album one" />
                 <figcaption>
@@ -354,39 +361,53 @@ const Home = () => {
           <h2 className="text-center pt-5">Meet Sadheera</h2>
           <p className="text-center pb-5">Gallery</p>
           <div class="mosaic-gallery">
-            <Fancybox options={{ Carousel: { infinite: false } }}>
-              <div class="mosaic-row">
-                <a data-fancybox="gallery" href={gallaryImgThree}>
-                  <img
-                    src={gallaryImgThree}
-                    alt="Image 4"
-                    class="mosaic-item"
-                  />
-                </a>
-                <a data-fancybox="gallery" href={gallaryImgTwo}>
-                  <img src={gallaryImgTwo} alt="Image 5" class="mosaic-item" />
-                </a>
-                <a data-fancybox="gallery" href={gallaryImgFive}>
-                  <img
-                    src={gallaryImgFive}
-                    alt="Image 1"
-                    class="mosaic-item"
-                    style={{ width: "104.9rem" }}
-                  />
-                </a>
-              </div>
-              <div class="mosaic-row two">
-                <a data-fancybox="gallery" href={gallaryImgOne}>
-                  <img src={gallaryImgOne} alt="Image 6" class="mosaic-item" />
-                </a>
-                <a data-fancybox="gallery" id="imgFour" href={gallaryImgFour}>
-                  {/* <img src={gallaryImgFour} alt="Image 2" class="mosaic-item" /> */}
-                </a>
-                <a data-fancybox="gallery" id="imgOne" href={imageOne}>
-                  {/* <img src={imageOne} alt="Image 3" class="mosaic-item" /> */}
-                </a>
-              </div>
-            </Fancybox>
+            <Row>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgOne} alt="image" />
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgSeven} alt="image" />
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgFive} alt="image" />
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgSix} alt="image" height={1280}/>
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgFour} alt="image" />
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgTwelve} alt="image" />
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgTwo} alt="image" />
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgThree} alt="image" />
+                </div>
+              </Col>
+              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                <div className="imageContainer">
+                  <img src={gallaryImgThirteen} alt="image" />
+                </div>
+              </Col>
+            </Row>
           </div>
         </section>
 
@@ -478,7 +499,7 @@ const Home = () => {
             </Row>
           </Container>
         </section>
-      </main>
+      </main >
     </>
   );
 };

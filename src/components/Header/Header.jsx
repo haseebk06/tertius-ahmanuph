@@ -22,13 +22,19 @@ const Header = ({ toggleCart, cartQuantity }) => {
         <nav>
           <ul className="d-flex align-items-center">
             <li>
-              <NavLink to={`/albums`}>Albums</NavLink>
+              <NavLink to={`/`}>Home</NavLink>
             </li>
             <li>
-              <NavLink to={`about`}>About</NavLink>
+              <a href={'#albums'}>Albums</a>
             </li>
             <li>
-              <NavLink to={`/projects`}>Projects</NavLink>
+              <a href={`#about`}>About</a>
+            </li>
+            <li>
+              <a href={`#gallery`}>Gallery</a>
+            </li>
+            <li>
+              <NavLink to={`/studio`}>Studio</NavLink>
             </li>
             <li>
               <NavLink to={`/shop-all`}>Shop All</NavLink>
