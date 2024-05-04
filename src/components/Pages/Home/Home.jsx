@@ -4,6 +4,7 @@ import { Container, Row, Col, Carousel } from "react-bootstrap";
 import imageOne from "../../../assets/img/image10.jpeg";
 import { useInView } from "react-intersection-observer";
 import { TweenMax, Power3, Power2, TimelineLite, gsap } from "gsap";
+import CSSPlugin from "gsap/CSSPlugin";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import cdCover from "../../../assets/img/cd-cover.jpg";
@@ -29,7 +30,7 @@ import x from "../../../assets/img/twitter-x.svg";
 import tube from "../../../assets/img/youtube.svg";
 import send from "../../../assets/img/send-1.svg";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, CSSPlugin, CSSRulePlugin);
 
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -50,7 +51,7 @@ const Home = () => {
 
     const tl = new TimelineLite();
 
-    tl.staggerTo(
+    gsap.to(
       imageReveal,
       1.4,
       {
@@ -59,7 +60,14 @@ const Home = () => {
         delay: 1,
       },
       "Start"
-    ).staggerFrom(image, 1.4, { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 });
+    );
+    
+    gsap.from(
+      image,
+      1.4,
+      { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 }
+    );
+    
 
     TweenMax.from(aboutMe, 0.8, {
       opacity: 1,
