@@ -25,16 +25,13 @@ const Header = ({ toggleCart, cartQuantity }) => {
               <NavLink to={`/`}>Home</NavLink>
             </li>
             <li>
-              <a href={'#albums'}>Albums</a>
-            </li>
-            <li>
               <a href={`#about`}>About</a>
             </li>
             <li>
-              <a href={`#gallery`}>Gallery</a>
+              <a href={'#albums'}>Albums</a>
             </li>
             <li>
-              <NavLink to={`/studio`}>Studio</NavLink>
+              <a href={`#gallery`}>Gallery</a>
             </li>
             <li>
               <NavLink to={`/shop-all`}>Shop All</NavLink>

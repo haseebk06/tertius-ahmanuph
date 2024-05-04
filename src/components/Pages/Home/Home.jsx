@@ -27,12 +27,13 @@ import fb from "../../../assets/img/facebook-2.svg";
 import insta from "../../../assets/img/instagram.svg";
 import x from "../../../assets/img/twitter-x.svg";
 import tube from "../../../assets/img/youtube.svg";
-
+import send from "../../../assets/img/send-1.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+
   let aboutMe = useRef(null);
   let image = useRef(null);
   let content = useRef(null);
@@ -191,7 +192,14 @@ const Home = () => {
                 </p>
               </Col>
 
-              <Col xs="12" sm="12" md="12" lg="12" xl="4" className="main-container">
+              <Col
+                xs="12"
+                sm="12"
+                md="12"
+                lg="12"
+                xl="4"
+                className="main-container"
+              >
                 <div className="about-image">
                   <img
                     src={imageOne}
@@ -361,53 +369,79 @@ const Home = () => {
           <h2 className="text-center pt-5">Meet Sadheera</h2>
           <p className="text-center pb-5">Gallery</p>
           <div class="mosaic-gallery">
-            <Row>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgOne} alt="image" />
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgSeven} alt="image" />
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgFive} alt="image" />
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgSix} alt="image" height={1280}/>
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgFour} alt="image" />
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgTwelve} alt="image" />
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgTwo} alt="image" />
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgThree} alt="image" />
-                </div>
-              </Col>
-              <Col xs="12" sm="12" md="6" lg="4" className="img-column">
-                <div className="imageContainer">
-                  <img src={gallaryImgThirteen} alt="image" />
-                </div>
-              </Col>
-            </Row>
+            <Fancybox
+              options={{
+                Carousel: {
+                  infinite: false,
+                },
+              }}
+            >
+              <Row>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgOne} data-fancybox="gallery">
+                      <img src={gallaryImgOne} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgSeven} data-fancybox="gallery">
+                      <img src={gallaryImgSeven} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgFive} data-fancybox="gallery">
+                      <img src={gallaryImgFive} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgSix} data-fancybox="gallery">
+                      <img src={gallaryImgSix} alt="image" height={1280} />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgFour} data-fancybox="gallery">
+                      <img src={gallaryImgFour} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgTwelve} data-fancybox="gallery">
+                      <img src={gallaryImgTwelve} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgTwo} data-fancybox="gallery">
+                      <img src={gallaryImgTwo} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgThree} data-fancybox="gallery">
+                      <img src={gallaryImgThree} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+                <Col xs="12" sm="12" md="6" lg="4" className="img-column">
+                  <div className="imageContainer">
+                    <a href={gallaryImgThirteen} data-fancybox="gallery">
+                      <img src={gallaryImgThirteen} alt="image" />
+                    </a>
+                  </div>
+                </Col>
+              </Row>
+            </Fancybox>
           </div>
         </section>
 
@@ -491,6 +525,11 @@ const Home = () => {
                           className="form-control"
                           placeholder="Message"
                         ></textarea>
+
+                        <button className="btn-send">
+                          Send &nbsp;
+                          <img src={send} alt="icon" width={20} />
+                        </button>
                       </div>
                     </Col>
                   </Row>
@@ -499,7 +538,7 @@ const Home = () => {
             </Row>
           </Container>
         </section>
-      </main >
+      </main>
     </>
   );
 };

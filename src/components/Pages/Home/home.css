@@ -119,7 +119,7 @@ h2 {
   letter-spacing: 1rem;
 }
 
-#albums .text-center~p {
+#albums .text-center ~ p {
   color: var(--coral);
   letter-spacing: 3px;
   font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
@@ -246,7 +246,8 @@ img {
   height: calc(100% - 5px);
   top: 5px;
   left: 5px;
-  background: transparent url("../../../assets/img/cd-disc-circular-text.png") left top no-repeat;
+  background: transparent url("../../../assets/img/cd-disc-circular-text.png")
+    left top no-repeat;
   transform: translate3d(0, 0, 0);
   background-size: cover;
   opacity: 0.88;
@@ -360,7 +361,7 @@ figure {
   overflow: hidden;
 }
 
-.imageContainer img{
+.imageContainer img {
   object-fit: cover;
   min-width: 250px;
   border-radius: 7px;
@@ -389,7 +390,16 @@ figure {
   color: var(--white) !important;
 }
 
-@media (max-width: 1200px) {}
+button.btn-send {
+  background: var(--dark-beige);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+}
 
 @media (max-width: 991.98px) {
   .about-inner {
@@ -397,7 +407,8 @@ figure {
   }
 }
 
-@media (max-width: 767.98px) {}
+@media (max-width: 767.98px) {
+}
 
 @media (max-width: 575.98px) {
   .two a {
