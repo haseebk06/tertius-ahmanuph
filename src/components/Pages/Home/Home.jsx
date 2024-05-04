@@ -50,7 +50,7 @@ const Home = () => {
 
     const tl = new TimelineLite();
 
-    tl.to(
+    tl.staggerTo(
       imageReveal,
       1.4,
       {
@@ -59,7 +59,7 @@ const Home = () => {
         delay: 1,
       },
       "Start"
-    ).from(image, 1.4, { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 });
+    ).staggerFrom(image, 1.4, { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 });
 
     TweenMax.from(aboutMe, 0.8, {
       opacity: 1,
