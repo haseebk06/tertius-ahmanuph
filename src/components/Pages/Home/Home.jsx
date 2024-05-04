@@ -58,7 +58,7 @@ const Home = () => {
         ease: Power2.easeInOut,
         delay: 1,
       },
-      "Cool kids"
+      "start"
     ).from(image, 1.4, { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 });
 
     TweenMax.from(aboutMe, 0.8, {
@@ -84,7 +84,7 @@ const Home = () => {
         delay: 0.8,
       },
       0.15,
-      "Cool kids"
+      "Start"
     );
 
     const handleScroll = () => {
