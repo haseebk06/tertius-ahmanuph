@@ -58,7 +58,7 @@ const Home = () => {
         ease: Power2.easeInOut,
         delay: 1,
       },
-      "start"
+      "Start"
     ).from(image, 1.4, { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 });
 
     TweenMax.from(aboutMe, 0.8, {
