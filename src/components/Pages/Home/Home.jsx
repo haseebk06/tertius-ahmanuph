@@ -2,7 +2,7 @@ import "./home.css";
 import { useRef, useEffect, useState, useInsertionEffect } from "react";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import imageOne from "../../../assets/img/image10.jpeg";
-import { useInView } from "react-intersection-observer";
+import {useGSAP} from "@gsap/react"
 import { TweenMax, Power3, Power2, TimelineLite, gsap } from "gsap";
 import CSSPlugin from "gsap/CSSPlugin";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
@@ -33,15 +33,15 @@ import send from "../../../assets/img/send-1.svg";
 gsap.registerPlugin(ScrollTrigger, CSSPlugin, CSSRulePlugin);
 
 const Home = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
 
+  const [scrollPosition, setScrollPosition] = useState(0);
   let aboutMe = useRef(null);
   let image = useRef(null);
   let content = useRef(null);
   let aboutSec = useRef(null);
   let imageReveal = CSSRulePlugin.getRule(".about-image:after");
 
-  useEffect(() => {
+  useGSAP(() => {
     const headLineFirst = content.children[1].children[0];
     const headLineSecond = headLineFirst.nextSibling;
     const headLineThird = headLineSecond.nextSibling;
@@ -50,6 +50,7 @@ const Home = () => {
     const headLineSixth = headLineFifth.nextSibling;
 
     const tl = new TimelineLite();
+
 
     gsap.to(
       imageReveal,
