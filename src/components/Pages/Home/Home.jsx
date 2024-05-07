@@ -2,8 +2,8 @@ import "./home.css";
 import { useRef, useEffect, useState, useInsertionEffect } from "react";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import imageOne from "../../../assets/img/image10.jpeg";
-import {useGSAP} from "@gsap/react"
-import { TweenMax, Power3, Power2, TimelineLite, gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Power3, Power2, gsap } from "gsap";
 import CSSPlugin from "gsap/CSSPlugin";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,13 +33,16 @@ import send from "../../../assets/img/send-1.svg";
 gsap.registerPlugin(ScrollTrigger, CSSPlugin, CSSRulePlugin);
 
 const Home = () => {
-
   const [scrollPosition, setScrollPosition] = useState(0);
   let aboutMe = useRef(null);
   let image = useRef(null);
   let content = useRef(null);
   let aboutSec = useRef(null);
+
+  const galleryOne = useRef();
+
   let imageReveal = CSSRulePlugin.getRule(".about-image:after");
+  let imageRevealTwo = CSSRulePlugin.getRule(".imgOne::before");
 
   useGSAP(() => {
     const headLineFirst = content.children[1].children[0];
@@ -49,28 +52,20 @@ const Home = () => {
     const headLineFifth = headLineFourth.nextSibling;
     const headLineSixth = headLineFifth.nextSibling;
 
-    const tl = new TimelineLite();
+    const tl = gsap.timeline();
 
-
-    gsap.to(
+    tl.to(
       imageReveal,
       1.4,
       {
-        width: "0%",
+        left: "100%",
         ease: Power2.easeInOut,
         delay: 1,
       },
-      "Start"
-    );
-    
-    gsap.from(
-      image,
-      1.4,
-      { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 }
-    );
-    
+      "Cool Kids"
+    ).from(image, 1.4, { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 });
 
-    TweenMax.from(aboutMe, 0.8, {
+    gsap.from(aboutMe, 0.8, {
       opacity: 1,
       y: 20,
       ease: Power3.easeOut,
@@ -93,8 +88,19 @@ const Home = () => {
         delay: 0.8,
       },
       0.15,
-      "Start"
+      "Cool Kids"
     );
+
+    tl.to(imageRevealTwo, {
+      left: "100%",
+      duration: 2,
+      ease: Power2.easeInOut,
+      delay: 1.4,
+    }).from(galleryOne.current, {
+      scale: 1.6,
+      ease: Power2.easeInOut,
+      delay: -1.6,
+    }, 0);
 
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -388,8 +394,12 @@ const Home = () => {
               <Row>
                 <Col xs="12" sm="12" md="6" lg="4" className="img-column">
                   <div className="imageContainer">
-                    <a href={gallaryImgOne} data-fancybox="gallery">
-                      <img src={gallaryImgOne} alt="image" />
+                    <a
+                      href={gallaryImgOne}
+                      data-fancybox="gallery"
+                      className="imgOne"
+                    >
+                      <img src={gallaryImgOne} alt="image" ref={galleryOne} />
                     </a>
                   </div>
                 </Col>
