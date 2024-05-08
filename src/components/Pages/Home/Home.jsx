@@ -54,7 +54,7 @@ const Home = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: aboutSec.current,
-        start: "t0p center",
+        start: "top center",
       }
     });
 
