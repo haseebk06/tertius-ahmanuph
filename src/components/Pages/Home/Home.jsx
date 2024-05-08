@@ -42,35 +42,47 @@ const Home = () => {
   const galleryOne = useRef();
 
   let imageReveal = CSSRulePlugin.getRule(".about-image:after");
-  let imageRevealTwo = CSSRulePlugin.getRule(".imgOne::before");
 
   useGSAP(() => {
-    const headLineFirst = content.children[1].children[0];
+    const headLineFirst = content.current.children[1].children[0];
     const headLineSecond = headLineFirst.nextSibling;
     const headLineThird = headLineSecond.nextSibling;
     const headLineFourth = headLineThird.nextSibling;
     const headLineFifth = headLineFourth.nextSibling;
     const headLineSixth = headLineFifth.nextSibling;
 
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutSec.current,
+        start: "top center",
+      }
+    });
 
     tl.to(
       imageReveal,
-      1.4,
       {
+        duration: 1.4,
         left: "100%",
         ease: Power2.easeInOut,
-        delay: 1,
       },
       "Cool Kids"
-    ).from(image, 1.4, { scale: 1.6, ease: Power2.easeInOut, delay: -1.6 });
-
-    gsap.from(aboutMe, 0.8, {
-      opacity: 1,
-      y: 20,
-      ease: Power3.easeOut,
-      delay: 2,
+    ).from(image.current, {
+      scale: 1.6, ease: Power2.easeInOut, delay: -1.6, duration: 1.4
     });
+
+    gsap.from(aboutMe.current, {
+      scrollTrigger: {
+        trigger: aboutMe.current,
+        start: "-200px center",
+        end: "bottom 80%",
+        scrub: true,
+        toggleActions: "restart",
+      },
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      ease: Power3.easeOut,
+    })
 
     tl.staggerFrom(
       [
@@ -85,22 +97,10 @@ const Home = () => {
       {
         y: 44,
         ease: Power3.easeOut,
-        delay: 0.8,
       },
       0.15,
       "Cool Kids"
     );
-
-    tl.to(imageRevealTwo, {
-      left: "100%",
-      duration: 2,
-      ease: Power2.easeInOut,
-      delay: 1.4,
-    }).from(galleryOne.current, {
-      scale: 1.6,
-      ease: Power2.easeInOut,
-      delay: -1.6,
-    }, 0);
 
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -148,7 +148,7 @@ const Home = () => {
           </h2>
         </section>
 
-        <section id="about" className="py-5" ref={(el) => (aboutSec = el)}>
+        <section id="about" className="py-5" ref={aboutSec}>
           <Container fluid>
             <Row>
               <Col
@@ -158,13 +158,11 @@ const Home = () => {
                 lg="12"
                 xl="8"
                 className="about-text d-flex flex-column align-items-center"
-                ref={(el) => (content = el)}
+                ref={content}
               >
                 <h2
                   className="about-blob"
-                  ref={(el) => {
-                    aboutMe = el;
-                  }}
+                  ref={aboutMe}
                 >
                   About Me
                 </h2>
@@ -219,7 +217,7 @@ const Home = () => {
                   <img
                     src={imageOne}
                     alt="Shadera's about image"
-                    ref={(el) => (image = el)}
+                    ref={image}
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -399,7 +397,7 @@ const Home = () => {
                       data-fancybox="gallery"
                       className="imgOne"
                     >
-                      <img src={gallaryImgOne} alt="image" ref={galleryOne} />
+                      <img src={gallaryImgOne} alt="image" />
                     </a>
                   </div>
                 </Col>
