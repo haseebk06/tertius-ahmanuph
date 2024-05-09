@@ -38,8 +38,7 @@ const Home = () => {
   let image = useRef(null);
   let content = useRef(null);
   let aboutSec = useRef(null);
-
-  const galleryOne = useRef();
+  let albums = useRef(null);
 
   let imageReveal = CSSRulePlugin.getRule(".about-image:after");
 
@@ -58,17 +57,46 @@ const Home = () => {
       }
     });
 
+    const txtTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutSec.current,
+        start: "-100px center",
+        end: "top 200px",
+        scrub: 3,
+        toggleActions: "restart"
+      }
+    });
+
     tl.to(
       imageReveal,
       {
         duration: 1.4,
         left: "100%",
         ease: Power2.easeInOut,
-      },
-      "Cool Kids"
+      }
     ).from(image.current, {
       scale: 1.6, ease: Power2.easeInOut, delay: -1.6, duration: 1.4
     });
+
+    txtTl.from(
+      [
+        headLineFirst.children,
+        headLineSecond.children,
+        headLineThird.children,
+        headLineFourth.children,
+        headLineFifth.children,
+        headLineSixth.children,
+      ],
+      1,
+      {
+        opacity: 0,
+        y: 44,
+        stagger: .1,
+        ease: Power2.easeInOut,
+        delay: .5,
+      },
+      0.15
+    );
 
     gsap.from(aboutMe.current, {
       scrollTrigger: {
@@ -84,23 +112,22 @@ const Home = () => {
       ease: Power3.easeOut,
     })
 
-    tl.staggerFrom(
-      [
-        headLineFirst.children,
-        headLineSecond.children,
-        headLineThird.children,
-        headLineFourth.children,
-        headLineFifth.children,
-        headLineSixth.children,
-      ],
-      1,
-      {
-        y: 44,
-        ease: Power3.easeOut,
+    let targets = gsap.utils.toArray(albums.current);
+
+    gsap.from(targets, {
+      scrollTrigger: {
+        trigger: albums.current,
+        start: "-200px center",
+        end: "bottom 80%",
+        scrub: true,
+        toggleActions: "restart",
       },
-      0.15,
-      "Cool Kids"
-    );
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      ease: Power3.easeOut,
+      stagger: .1
+    })
 
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -228,7 +255,7 @@ const Home = () => {
 
         <section id="albums">
           <div className="pt-5">
-            <h2 className="text-center">Albums</h2>
+            <h2 className="text-center" ref={albums}>Albums</h2>
             <p className="text-center">
               Single and all music albums released between year and year!
             </p>

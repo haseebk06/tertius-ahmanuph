@@ -1,18 +1,3 @@
-@font-face {
-  font-family: Tertius Sans Bold;
-  src: url(assets/fonts/Geotica-Three/Geotica-Three-W03-Open.ttf);
-}
-
-@font-face {
-  font-family: Tertius Sans Normal;
-  src: url(assets/fonts/GrandCru-LightS/GrandCru-LightS.otf);
-}
-
-@font-face {
-  font-family: Tertius Sans Italic;
-  src: url(assets/fonts/Aloja-Extended/Aloja-Extended.ttf);
-}
-
 :root {
   --light-beige: #fefaf7;
   --dark-bluey: #363b4e;
@@ -35,4 +20,19 @@
 
 body {
   background: var(--light-beige);
+}
+
+@font-face {
+  font-family: Tertius Sans Bold;
+  src: url(assets/fonts/Geotica-Three/Geotica-Three-W03-Open.ttf);
+}
+
+@font-face {
+  font-family: Tertius Sans Normal;
+  src: url(assets/fonts/GrandCru-LightS/GrandCru-LightS.otf);
+}
+
+@font-face {
+  font-family: Tertius Sans Italic;
+  src: url(assets/fonts/Aloja-Extended/Aloja-Extended.ttf);
 }
