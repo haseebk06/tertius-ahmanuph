@@ -58,11 +58,11 @@ const Home = () => {
       },
     });
 
-    gsap.from(hero.current, {
-      scale: 1.2,
-      duration: .2,
-      delay:3
-    })
+    // gsap.from(hero.current, {
+    //   scale: 1.1,
+    //   duration: .2,
+    //   delay:3
+    // })
 
     const txtTl = gsap.timeline({
       scrollTrigger: {
