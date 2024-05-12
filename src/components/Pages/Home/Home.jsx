@@ -58,6 +58,12 @@ const Home = () => {
       },
     });
 
+    gsap.from(hero.current, {
+      scale: 1.2,
+      duration: .2,
+      delay:3
+    })
+
     const txtTl = gsap.timeline({
       scrollTrigger: {
         trigger: aboutSec.current,
@@ -112,11 +118,6 @@ const Home = () => {
       duration: 1,
       ease: Power3.easeOut,
     });
-
-    gsap.from(hero.current, {
-      scale: 1,
-      delay:2
-    })
 
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
