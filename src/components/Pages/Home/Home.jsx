@@ -1,5 +1,5 @@
 import "./home.css";
-import { useRef, useEffect, useState, useInsertionEffect } from "react";
+import { useRef, useState } from "react";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import imageOne from "../../../assets/img/image10.jpeg";
 import { useGSAP } from "@gsap/react";
@@ -39,6 +39,7 @@ const Home = () => {
   let content = useRef(null);
   let aboutSec = useRef(null);
   let albums = useRef(null);
+  let hero = useRef(null);
 
   let imageReveal = CSSRulePlugin.getRule(".about-image:after");
 
@@ -54,7 +55,7 @@ const Home = () => {
       scrollTrigger: {
         trigger: aboutSec.current,
         start: "top center",
-      }
+      },
     });
 
     const txtTl = gsap.timeline({
@@ -63,19 +64,19 @@ const Home = () => {
         start: "-100px center",
         end: "top 200px",
         scrub: 3,
-        toggleActions: "restart"
-      }
+        toggleActions: "restart",
+      },
     });
 
-    tl.to(
-      imageReveal,
-      {
-        duration: 1.4,
-        left: "100%",
-        ease: Power2.easeInOut,
-      }
-    ).from(image.current, {
-      scale: 1.6, ease: Power2.easeInOut, delay: -1.6, duration: 1.4
+    tl.to(imageReveal, {
+      duration: 1.4,
+      left: "100%",
+      ease: Power2.easeInOut,
+    }).from(image.current, {
+      scale: 1.6,
+      ease: Power2.easeInOut,
+      delay: -1.6,
+      duration: 1.4,
     });
 
     txtTl.from(
@@ -91,9 +92,9 @@ const Home = () => {
       {
         opacity: 0,
         y: 44,
-        stagger: .1,
+        stagger: 0.1,
         ease: Power2.easeInOut,
-        delay: .5,
+        delay: 0.5,
       },
       0.15
     );
@@ -110,23 +111,11 @@ const Home = () => {
       opacity: 0,
       duration: 1,
       ease: Power3.easeOut,
-    })
+    });
 
-    let targets = gsap.utils.toArray(albums.current);
-
-    gsap.from(targets, {
-      scrollTrigger: {
-        trigger: albums.current,
-        start: "-200px center",
-        end: "bottom 80%",
-        scrub: true,
-        toggleActions: "restart",
-      },
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      ease: Power3.easeOut,
-      stagger: .1
+    gsap.from(hero.current, {
+      scale: 1,
+      delay:2
     })
 
     const handleScroll = () => {
@@ -144,6 +133,7 @@ const Home = () => {
     <>
       <main id="home">
         <section
+          ref={hero}
           id="hero-section"
           className="banner"
           style={{ backgroundSize: scrollPosition > 150 ? "150%" : "180%" }}
@@ -187,10 +177,7 @@ const Home = () => {
                 className="about-text d-flex flex-column align-items-center"
                 ref={content}
               >
-                <h2
-                  className="about-blob"
-                  ref={aboutMe}
-                >
+                <h2 className="about-blob" ref={aboutMe}>
                   About Me
                 </h2>
                 <p className="about-inner">
@@ -255,7 +242,9 @@ const Home = () => {
 
         <section id="albums">
           <div className="pt-5">
-            <h2 className="text-center" ref={albums}>Albums</h2>
+            <h2 className="text-center" ref={albums}>
+              Albums
+            </h2>
             <p className="text-center">
               Single and all music albums released between year and year!
             </p>

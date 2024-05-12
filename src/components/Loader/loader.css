@@ -1,0 +1,21 @@
+
+.loader-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-beige);
+    position: fixed;
+    z-index: 99;
+    transition: border-radius 2s ease-in-out;
+}
+
+.upward {
+    border-radius: 0 0 50% 50%;
+}
+
+.loader-wrapper .h1 {
+    font-family: Tertius Sans Italic, sans-serif;
+    font-size: clamp(2rem, -3.625rem + 18.75vw, 8rem);
+}

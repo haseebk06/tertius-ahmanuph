@@ -1,18 +1,27 @@
-import { Header, Shop, Footer, Products, Home, Cart } from "./components";
+import {
+  Header,
+  Shop,
+  Footer,
+  Products,
+  Home,
+  Cart,
+  Loader,
+} from "./components";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 
 function App() {
   const [showCart, setShowCart] = useState(false);
-  
+
   const closeCart = () => {
     setShowCart(false);
   };
 
   return (
     <>
-      <Header toggleCart={() => setShowCart(!showCart)}/>
+      <Loader />
+      <Header toggleCart={() => setShowCart(!showCart)} />
       <Cart showCart={showCart} closeCart={closeCart} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
