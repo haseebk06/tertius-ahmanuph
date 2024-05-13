@@ -11,9 +11,9 @@
     transition: border-radius 2s ease-in-out;
 }
 
-.upward {
-    border-radius: 0 0 50% 50%;
-}
+/* .upward {
+    border-radius: 50%;
+} */
 
 .loader-wrapper .h1 {
     font-family: Tertius Sans Italic, sans-serif;

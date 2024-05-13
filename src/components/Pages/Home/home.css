@@ -36,6 +36,7 @@ h2 {
   font-weight: 700;
   font-size: clamp(1rem, 1rem + 6.8966vw, 8rem);
   color: #fffafa;
+  text-align: center;
 }
 
 #hero-section h2 span {
@@ -400,9 +401,6 @@ button.btn-send {
 
 .imageContainer {
   position: relative;
-}
-
-@media (max-width: 1200px) {
 }
 
 @media (max-width: 991.98px) {
