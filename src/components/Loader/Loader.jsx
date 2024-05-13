@@ -1,7 +1,7 @@
 import "./loader.css";
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, Power3 } from "gsap";
+import { gsap } from "gsap";
 
 const Loader = () => {
 
@@ -15,6 +15,7 @@ const Loader = () => {
 
     tl.from(letters, {
       y: 700,
+      delay: 2,
       delay: 0.5,
       stagger: {
         amount: 0.5,
@@ -23,6 +24,7 @@ const Loader = () => {
       ease: "back.out",
     }).to(letters, {
       y: -700,
+      delay: 1,
       stagger: {
         amount: 0.5,
         from: "end",

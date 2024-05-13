@@ -40,6 +40,8 @@ const Home = () => {
   let aboutSec = useRef(null);
   let albums = useRef(null);
   let hero = useRef(null);
+  let galleryImg = useRef(null);
+  let sadheera = useRef(null);
 
   let imageReveal = CSSRulePlugin.getRule(".about-image:after");
 
@@ -58,11 +60,11 @@ const Home = () => {
       },
     });
 
-    // gsap.from(hero.current, {
-    //   scale: 1.1,
-    //   duration: .2,
-    //   delay:3
-    // })
+    gsap.from(hero.current, {
+      scale: 1,
+      duration: .2,
+      delay: 4
+    })
 
     const txtTl = gsap.timeline({
       scrollTrigger: {
@@ -119,6 +121,34 @@ const Home = () => {
       ease: Power3.easeOut,
     });
 
+    gsap.from(albums.current, {
+      scrollTrigger: {
+        trigger: albums.current,
+        start: "-200px center",
+        end: "bottom 80%",
+        scrub: true,
+        toggleActions: "restart",
+      },
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      ease: Power3.easeOut,
+    });
+
+    gsap.from(sadheera.current, {
+      scrollTrigger: {
+        trigger: sadheera.current,
+        start: "-200px center",
+        end: "bottom 80%",
+        scrub: true,
+        toggleActions: "restart",
+      },
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      ease: Power3.easeOut,
+    });
+
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
     };
@@ -137,7 +167,7 @@ const Home = () => {
           ref={hero}
           id="hero-section"
           className="banner"
-          style={{ backgroundSize: scrollPosition > 150 ? "150%" : "180%" }}
+          style={{ backgroundSize: scrollPosition > 150 ? "cover" : "cover" }}
         >
           <h1
             style={{
@@ -279,8 +309,7 @@ const Home = () => {
                                   src={cd}
                                   width="375"
                                   height="375"
-                                  alt="photo-1462332420958-a05d1e002413"
-                                  title="photo-1462332420958-a05d1e002413"
+                                  alt="image"
                                   loading="lazy"
                                 />
                                 <div class="wvc-album-disc-disc-text" />
@@ -396,7 +425,7 @@ const Home = () => {
         </section>
 
         <section id="gallery">
-          <h2 className="text-center pt-5">Meet Sadheera</h2>
+          <h2 className="text-center pt-5" ref={sadheera}>Meet Sadheera</h2>
           <p className="text-center pb-5">Gallery</p>
           <div class="mosaic-gallery">
             <Fancybox
@@ -404,8 +433,7 @@ const Home = () => {
                 Carousel: {
                   infinite: false,
                 },
-              }}
-            >
+              }}>
               <Row>
                 <Col xs="12" sm="12" md="6" lg="4" className="img-column">
                   <div className="imageContainer">
@@ -421,7 +449,7 @@ const Home = () => {
                 <Col xs="12" sm="12" md="6" lg="4" className="img-column">
                   <div className="imageContainer">
                     <a href={gallaryImgSeven} data-fancybox="gallery">
-                      <img src={gallaryImgSeven} alt="image" />
+                      <img src={gallaryImgSeven} alt="image" ref={galleryImg} />
                     </a>
                   </div>
                 </Col>
