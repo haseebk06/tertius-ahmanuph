@@ -25,13 +25,16 @@ const Header = ({ toggleCart, cartQuantity }) => {
               <NavLink to={`/`}>Home</NavLink>
             </li>
             <li>
-              <a href={`#about`}>About</a>
+              <NavLink to={`/about`}>About</NavLink>
             </li>
             <li>
               <a href={'#albums'}>Albums</a>
             </li>
             <li>
-              <a href={`#gallery`}>Gallery</a>
+              <NavLink to={`/gallery`}>Gallery</NavLink>
+            </li>
+            <li>
+              <NavLink to={`/contact`}>Contact</NavLink>
             </li>
             <li>
               <NavLink to={`/shop-all`}>Shop All</NavLink>
@@ -40,7 +43,7 @@ const Header = ({ toggleCart, cartQuantity }) => {
         </nav>
         <div>
           <NavLink to={`/`}>
-            <img src={logo} id="logo" alt="logo" width={150} />
+            <img src={logo} id="logo" alt="logo" />
           </NavLink>
         </div>
         <button className="d-block" onClick={toggleCart}>

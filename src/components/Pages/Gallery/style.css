@@ -1,0 +1,41 @@
+#gallery {
+  background: var(--light-beige);
+}
+.mosaic-gallery {
+  display: flex;
+  gap: 2vw;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+
+.img-column {
+  margin: 10px 0;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  object-fit: cover;
+  min-width: 250px;
+  border-radius: 7px;
+}
+
+#gallery h2 {
+  font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 1rem + 6.8966vw, 5rem);
+  color: var(--black);
+  font-weight: 600;
+}
+
+#gallery p {
+  font-size: clamp(1rem, 1rem + 6.8966vw, 3rem);
+  font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
+  color: var(--black);
+  font-weight: 600;
+}

@@ -7,7 +7,7 @@ header * {
 }
 
 header {
-  height: 72px;
+  height: fit-content;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -21,6 +21,7 @@ ul {
   list-style: none;
   padding: 0;
   gap: 1.75rem;
+  margin-bottom: 0;
 }
 
 a {
@@ -34,7 +35,8 @@ button {
 }
 
 #logo {
-  margin-right: 200px;
+  margin-right: 20rem;
+  width: 80px;
 }
 
 nav ul li {

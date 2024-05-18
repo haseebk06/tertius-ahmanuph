@@ -4,12 +4,6 @@ main#home * {
   color: #000;
 }
 
-.banner,
-h1,
-h2 {
-  transition: 0.6s;
-}
-
 .banner {
   display: flex;
   flex-direction: column;
@@ -18,10 +12,14 @@ h2 {
   width: 100vw;
   height: 100vh;
   background: url("../../../assets/img/hero-img.jpg");
+  transform: scale(1.2);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: 0.5s;
+}
+
+.banner h1, .banner h2{
+  transform: scale(1.2);
 }
 
 #home h2 {
@@ -36,6 +34,7 @@ h2 {
   font-weight: 700;
   font-size: clamp(1rem, 1rem + 6.8966vw, 8rem);
   color: #fffafa;
+  text-align: center;
 }
 
 #hero-section h2 span {
@@ -44,68 +43,6 @@ h2 {
   font-size: clamp(1rem, -2.3333rem + 11.1111vw, 3rem);
   color: #fffafa;
   margin: 0 20px;
-}
-
-#about {
-  background: var(--middle-beige);
-}
-
-.about-image {
-  width: 489px;
-  height: 615px;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-image::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  background: var(--light-beige);
-}
-
-.about-image img {
-  width: 100%;
-  position: absolute;
-}
-
-.about-text {
-  margin: auto;
-  margin-top: 20px;
-}
-
-.about-text span {
-  margin: 0 5px;
-}
-
-.about-text p {
-  font-size: clamp(1rem, 1rem + 6.8966vw, 1.5rem);
-}
-
-.about-blob {
-  height: 12rem;
-  width: 12rem;
-  border-radius: 50%;
-  background: var(--dark-beige);
-  color: var(--coral) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  cursor: pointer;
-  margin-right: calc(25vw + 10rem);
-}
-
-.content-line {
-  margin: 0;
-  height: 44px;
-  overflow: hidden;
 }
 
 #albums {
@@ -208,7 +145,7 @@ h2 {
     0px 0px 0px 5px rgba(0, 0, 0, 0.22), 0px 0px 0px 3px rgba(0, 0, 0, 0.88);
 }
 
-wvc-album-disc-disc-container {
+.wvc-album-disc-disc-container {
   position: absolute;
   transition: all 0.7s cubic-bezier(0, 0.45, 0.54, 0.99);
   transform: translate3d(0, 0, 0) rotate(0);
@@ -236,7 +173,6 @@ wvc-album-disc-disc-container {
 img {
   max-width: 100%;
   height: auto;
-  /* vertical-align: bottom; */
 }
 
 .wvc-album-disc-disc-text {
@@ -336,66 +272,6 @@ img {
 
 figure {
   margin: 0 0 0rem;
-}
-
-#gallery {
-  background: var(--light-bluey);
-}
-
-.mosaic-gallery {
-  display: flex;
-  gap: 2vw;
-  padding: 2vw;
-  box-sizing: border-box;
-}
-
-.img-column {
-  margin: 10px 0;
-}
-
-.imageContainer {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-radius: 1vw;
-  overflow: hidden;
-}
-
-.imageContainer img {
-  object-fit: cover;
-  min-width: 250px;
-  border-radius: 7px;
-}
-
-#gallery h2 {
-  font-size: clamp(1rem, 1rem + 6.8966vw, 5rem);
-  color: var(--coral);
-  font-weight: 600;
-}
-
-#gallery p {
-  font-size: clamp(1rem, 1rem + 6.8966vw, 3rem);
-  font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
-  color: var(--coral);
-  font-weight: 600;
-}
-
-#contact {
-  padding: 5rem 0;
-  background: var(--dark-bluey);
-  color: var(--white) !important;
-}
-
-#contact * {
-  color: var(--white) !important;
-}
-
-button.btn-send {
-  background: var(--dark-beige);
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 1rem 0;
-  width: 100%;
 }
 
 .imageContainer {
