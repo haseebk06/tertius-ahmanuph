@@ -277,27 +277,8 @@ figure {
 .imageContainer {
   position: relative;
 }
-
-@media (max-width: 991.98px) {
-  .about-inner {
-    text-align: center;
-  }
-}
-
-@media (max-width: 767.98px) {
-}
-
 @media (max-width: 575.98px) {
   .two a {
     height: 200.95px !important;
-  }
-
-  .about-image {
-    width: 100%;
-  }
-
-  .about-blob {
-    margin-right: 0;
-    font-size: 2rem !important;
   }
 }

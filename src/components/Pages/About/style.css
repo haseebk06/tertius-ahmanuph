@@ -64,3 +64,21 @@
   height: 44px;
   overflow: hidden;
 }
+
+@media (max-width: 991.98px) {
+  .about-inner {
+    text-align: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-blob {
+    margin-right: 0;
+    font-size: 2rem !important;
+  }
+}

@@ -64,13 +64,19 @@ const Header = ({ toggleCart, cartQuantity }) => {
       <nav id="mob-main" className={`${isHeader ? 'left-0' : 'left-full'}`}>
         <ul className="d-flex flex-column align-items-left">
           <li>
-            <NavLink to={`/albums`}>Albums</NavLink>
+            <NavLink to={`/`}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={`about`}>About</NavLink>
+            <NavLink to={`/#albums`}>Albums</NavLink>
           </li>
           <li>
-            <NavLink to={`/projects`}>Projects</NavLink>
+            <NavLink to={`/about`}>About</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/gallery`}>Projects</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/contact`}>Contact</NavLink>
           </li>
           <li>
             <NavLink to={`/shop-all`}>Shop All</NavLink>
