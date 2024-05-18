@@ -47,17 +47,17 @@ main#home * {
 
 #albums {
   padding: 0 1rem;
-  background: var(--dark-beige);
+  background: var(--light-beige);
 }
 
 #albums h2 {
-  color: var(--coral);
+  color: var(--black);
   font-size: clamp(1rem, 1rem + 6.8966vw, 5rem);
   letter-spacing: 1rem;
 }
 
 #albums .text-center ~ p {
-  color: var(--coral);
+  color: var(--black);
   letter-spacing: 3px;
   font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
   font-size: clamp(1rem, 1rem + 6.8966vw, 1.3rem);
