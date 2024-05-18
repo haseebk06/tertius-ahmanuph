@@ -13,8 +13,6 @@ import albumFour from "../../../assets/img/album_4.jpg";
 const Home = () => {
   let albums = useRef(null);
   let hero = useRef(null);
-  let galleryImg = useRef(null);
-  let sadheera = useRef(null);
 
   useEffect(() => {
     // Ensure elements are not null before running the animation
