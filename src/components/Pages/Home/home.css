@@ -278,9 +278,6 @@ figure {
   position: relative;
 }
 
-@media (max-width: 1200px) {
-}
-
 @media (max-width: 991.98px) {
   .about-inner {
     text-align: center;
