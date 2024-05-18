@@ -121,7 +121,7 @@ const Home = () => {
                 </Col>
                 <Col xs="12" sm="12" md="6" xl="6" style={{ margin: "auto" }}>
                   <div className="head">
-                    <ul className="d-flex align-items-center">
+                    <ul className="d-flex flex-wrap align-items-center">
                       <li className="story active">The Story</li>
                       <li className="concept">The Concept</li>
                       <li className="sound">The Sound</li>
