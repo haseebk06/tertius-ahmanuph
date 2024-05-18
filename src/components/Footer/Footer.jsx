@@ -1,18 +1,18 @@
 import "./footer.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import footerLogo from "../../assets/img/Footer-logo-img.png";
 
 const Footer = () => {
+  
   return (
     <>
       <footer>
         <Container className="pb-5 footer-container" fluid>
           <Row>
             <Col md="12">
-              <figure className="footer-logo py-3">
-                <img src={footerLogo} alt="Footer Logo" />
-              </figure>
+              <h2 className="text-center py-3">
+                Tertius Ahmanuph
+              </h2>
             </Col>
             <Col>
               <p className="text-base">Subscribe</p>

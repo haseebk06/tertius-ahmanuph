@@ -5,20 +5,82 @@ import insta from "../../../assets/img/instagram.svg";
 import x from "../../../assets/img/twitter-x.svg";
 import tube from "../../../assets/img/youtube.svg";
 import send from "../../../assets/img/send-1.svg";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 const Contact = () => {
+  const contactTXT = useRef(null);
+  const pTxt = useRef(null);
+
+  useGSAP(() => {
+    const headLineFirst = pTxt.current.children[0];
+    const headLineSecond = headLineFirst.nextSibling;
+    const headLineThird = headLineSecond.nextSibling;
+    const headLineFourth = headLineThird.nextSibling;
+    const headLineFifth = headLineFourth.nextSibling;
+    const headLineSixth = headLineFifth.nextSibling;
+
+    gsap.from(
+      [
+        headLineFirst.children,
+        headLineSecond.children,
+        headLineThird.children,
+        headLineFourth.children,
+        headLineFifth.children,
+        headLineSixth.children,
+      ],
+      {
+        yPercent: 130,
+        stagger: 0.1,
+        delay: 0.5,
+      }
+    );
+
+    gsap.from(contactTXT.current, {
+      yPercent: 130,
+      duration: 1.2,
+      stagger: 0.1,
+    });
+  }, []);
+
   return (
     <section id="contact">
       <Container fluid>
         <Row>
           <Col xs="12" sm="12" md="6" xl="6">
-            <h2 className="text-left">SEND SADHEERA AN E-MAIL</h2>
-            <p>
-              Please use the following forms to submit questions regarding
-              events, tours, music or other label related media. Feel free to
-              also email us directly at Thirddim9nsion@gmail.com. A
-              representative will respond within 24-48 hours, thank you for your
-              patience.
+            <div className="contact-txt-wrapper">
+              <h2 className="text-left" ref={contactTXT}>
+                SEND SHADERA AN E-MAIL
+              </h2>
+            </div>
+            <p className="p-txt" ref={pTxt}>
+              <div className="p-txt-container">
+                <div>Please use the following forms to submit questions</div>
+              </div>
+              <div className="p-txt-container">
+                <div>
+                  regarding events, tours, music or other label related media.
+                </div>
+              </div>
+              <div className="p-txt-container">
+                <div>Feel free to also email us directly at</div>
+              </div>
+              <div className="p-txt-container">
+                <div>
+                  <a href="mailto:thirddim9nsion@gmail.com">
+                    thirddim9nsion@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="p-txt-container">
+                <div>
+                  A representative will respond within 24-48 hours, thank
+                </div>
+              </div>
+              <div className="p-txt-container">
+                <div>you for your patience.</div>
+              </div>
             </p>
             <br />
             <br />

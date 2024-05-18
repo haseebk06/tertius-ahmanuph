@@ -15,14 +15,16 @@ footer {
   margin: 1.5rem 1.5rem 0 1.5rem;
 }
 
-.footer-container {
-  background: var(--light-beige);
+footer h2 {
+  font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, -2.3333rem + 11.1111vw, 3rem);
+  color: var(--black);
+  margin-bottom: 2.5rem;
 }
 
-.footer-logo {
-  text-align: center;
-  max-width: 100%;
-  filter: brightness(0);
+.footer-container {
+  background: var(--light-beige);
 }
 
 .text-base {

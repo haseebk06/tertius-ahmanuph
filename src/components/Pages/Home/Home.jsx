@@ -1,5 +1,5 @@
 import "./home.css";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useGSAP } from "@gsap/react";
 import { Power3, gsap } from "gsap";
@@ -13,38 +13,50 @@ import albumFour from "../../../assets/img/album_4.jpg";
 const Home = () => {
   let albums = useRef(null);
   let hero = useRef(null);
+  let herotxt = useRef(null);
+  let spanTxt = useRef(null);
 
-  useEffect(() => {
-    // Ensure elements are not null before running the animation
-    if (hero.current) {
-      gsap.to(hero.current, {
-        scale: 1,
-        delay: 2,
-        ease: Power3.easeInOut,
-      });
+  useGSAP(() => {
+    gsap.to(hero.current, {
+      scale: 1,
+      delay: 2,
+      ease: Power3.easeInOut,
+    });
 
-      // Ensuring the children exist
-      if (hero.current.children.length > 0) {
-        gsap.to(hero.current.children, {
-          scale: 1,
-          delay: 2,
-          ease: Power3.easeInOut,
-        });
-      }
-    }
+    gsap.to(hero.current.children, {
+      scale: 1,
+      delay: 2,
+      ease: Power3.easeInOut,
+    });
+
+    gsap.from(herotxt.current, {
+      yPercent: 130,
+      delay: 2.5,
+      duration: 1,
+    });
+
+    gsap.from(spanTxt.current, {
+      yPercent: 130,
+      delay: 2.5,
+      duration: 0.5,
+    });
   }, []);
 
   return (
     <>
       <main id="home">
         <section ref={hero} id="hero-section" className="banner">
-          <h1>Tertius AhmaNuph</h1>
-          <h2>
-            <span>New</span>
-            <span>Album</span>
-            <span>Out</span>
-            <span>Now</span>
-          </h2>
+          <div className="hero-txt-container">
+            <h1 ref={herotxt}>Tertius AhmaNuph</h1>
+          </div>
+          <div className="span-txt">
+            <h2 ref={spanTxt}>
+              <span>New</span>
+              <span>Album</span>
+              <span>Out</span>
+              <span>Now</span>
+            </h2>
+          </div>
         </section>
 
         <section id="albums">
@@ -58,45 +70,45 @@ const Home = () => {
             <Container fluid>
               <Row>
                 <Col xs="12" sm="12" md="6" xl="6">
-                  <div class="wvc-column-container wvc-column-bg-default wvc-column-bg-effect-none wvc-font-inherit wvc-column-font-inherit wvc-column-style-none wvc-border-color-none wvc-background-color-default">
-                    <div class="wvc-column-inner">
-                      <div class="wvc-column-wrapper wpb_wrapper">
-                        <div class="wvc-album-disc wvc-album-disc-align-left wvc-album-disc-cd wvc-album-disc-worn-border-yes wvc-album-disc-rotate-hover-stop wvc-element wvc-album-disc-has-link">
+                  <div className="wvc-column-container wvc-column-bg-default wvc-column-bg-effect-none wvc-font-inherit wvc-column-font-inherit wvc-column-style-none wvc-border-color-none wvc-background-color-default">
+                    <div className="wvc-column-inner">
+                      <div className="wvc-column-wrapper wpb_wrapper">
+                        <div className="wvc-album-disc wvc-album-disc-align-left wvc-album-disc-cd wvc-album-disc-worn-border-yes wvc-album-disc-rotate-hover-stop wvc-element wvc-album-disc-has-link">
                           <a
-                            class="wvc-album-disc-link-mask internal-link"
+                            className="wvc-album-disc-link-mask internal-link"
                             href="#"
                             title=""
                           ></a>
-                          <div class="wvc-album-disc-cover-container">
+                          <div className="wvc-album-disc-cover-container">
                             <div
-                              class="wvc-album-disc-disc-container wow wvc-album-disc-reveal animated"
+                              className="wvc-album-disc-disc-container wow wvc-album-disc-reveal animated"
                               style={{
                                 transitionDelay: "0.4s;",
                                 visibility: "visible;",
                               }}
                             >
                               <div
-                                class="wvc-album-disc-disc-inner"
+                                className="wvc-album-disc-disc-inner"
                                 style={{ animationDuration: "3.5s;" }}
                               >
                                 <img
                                   decoding="async"
-                                  class="wvc-album-disc-disc-img"
+                                  className="wvc-album-disc-disc-img"
                                   src={cd}
                                   width="375"
                                   height="375"
                                   alt="image"
                                   loading="lazy"
                                 />
-                                <div class="wvc-album-disc-disc-text" />
+                                <div className="wvc-album-disc-disc-text" />
                               </div>
-                              <div class="wvc-album-disc-disc-hole"></div>
+                              <div className="wvc-album-disc-disc-hole"></div>
                             </div>
                           </div>
-                          <div class="wvc-album-disc-cover-inner">
+                          <div className="wvc-album-disc-cover-inner">
                             <img
                               decoding="async"
-                              class="wvc-album-disc-cover-img"
+                              className="wvc-album-disc-cover-img"
                               src={cdCover}
                               width="375"
                               height="375"
@@ -104,12 +116,12 @@ const Home = () => {
                               title="cd-cover"
                               loading="lazy"
                             />
-                            <div class="wvc-album-disc-cover-border"></div>
+                            <div className="wvc-album-disc-cover-border"></div>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="wvc-text-block wvc-clearfix wvc-element wvc-mobile-text-align- wvc-wow fadeIn"
+                        className="wvc-text-block wvc-clearfix wvc-element wvc-mobile-text-align- wvc-wow fadeIn"
                         style={{
                           animationDelay: "0.2s;",
                           visibility: "visible;",
@@ -151,7 +163,7 @@ const Home = () => {
                 </Col>
               </Row>
             </Container>
-            <div class="d-flex align-items-center justify-content-center albums-img position-relative">
+            <div className="d-flex align-items-center justify-content-center albums-img position-relative">
               <figure>
                 <img src={albumOne} alt="album one" />
                 <figcaption>
