@@ -1,17 +1,42 @@
 import "./header.css";
 import logo from "../../logo.png";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Header = ({ toggleCart, cartQuantity }) => {
-
+const Header = ({ toggleCart }) => {
   const [isHeader, setIsHeader] = useState(false);
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
-  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-  const totalQuantity = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const updateCartQuantity = () => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const total = cartItems.reduce((total, item) => total + item.quantity, 0);
+    setTotalQuantity(total);
+  };
+
+  useEffect(() => {
+    // Initial load
+    updateCartQuantity();
+
+    // Update when localStorage changes
+    const handleStorageChange = () => {
+      updateCartQuantity();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
+  const scrollToAlbums = () => {
+    setTimeout(() => {
+      const albumsSection = document.getElementById("albums");
+      if (albumsSection) {
+        albumsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
     <>
@@ -28,7 +53,9 @@ const Header = ({ toggleCart, cartQuantity }) => {
               <NavLink to={`/about`}>About</NavLink>
             </li>
             <li>
-              <a href={'#albums'}>Albums</a>
+              <NavLink to={"/#albums"} onClick={() => scrollToAlbums()}>
+                Albums
+              </NavLink>
             </li>
             <li>
               <NavLink to={`/gallery`}>Gallery</NavLink>
@@ -58,16 +85,18 @@ const Header = ({ toggleCart, cartQuantity }) => {
               <img src={logo} id="logo" alt="logo" width={150} />
             </NavLink>
           </div>
-          <button className="hamburger" onClick={() => setIsHeader(!isHeader)}>|||</button>
+          <button className="hamburger" onClick={() => setIsHeader(!isHeader)}>
+            |||
+          </button>
         </div>
       </header>
-      <nav id="mob-main" className={`${isHeader ? 'left-0' : 'left-full'}`}>
+      <nav id="mob-main" className={`${isHeader ? "left-0" : "left-full"}`}>
         <ul className="d-flex flex-column align-items-left">
           <li>
             <NavLink to={`/`}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={`/#albums`}>Albums</NavLink>
+            <NavLink to={`/home#albums`}>Albums</NavLink>
           </li>
           <li>
             <NavLink to={`/about`}>About</NavLink>
@@ -82,10 +111,13 @@ const Header = ({ toggleCart, cartQuantity }) => {
             <NavLink to={`/shop-all`}>Shop All</NavLink>
           </li>
         </ul>
-        <button className="d-block" onClick={() => {
-          toggleCart();
-          setIsHeader(!isHeader);
-        }}>
+        <button
+          className="d-block"
+          onClick={() => {
+            toggleCart();
+            setIsHeader(!isHeader);
+          }}
+        >
           Cart ( {totalQuantity} )
         </button>
       </nav>

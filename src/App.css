@@ -45,15 +45,15 @@ body {
 
 @font-face {
   font-family: Tertius Sans Bold;
-  src: url(assets/fonts/Geotica-Three/Geotica-Three-W03-Open.ttf);
+  src: url("assets/fonts/Geotica-Three/Geotica-Three-W03-Open.ttf");
 }
 
 @font-face {
   font-family: Tertius Sans Normal;
-  src: url(assets/fonts/GrandCru-LightS/GrandCru-LightS.otf);
+  src: url("assets/fonts/GrandCru-LightS/GrandCru-LightS.otf");
 }
 
 @font-face {
   font-family: Tertius Sans Italic;
-  src: url(assets/fonts/Aloja-Extended/Aloja-Extended.ttf);
+  src: url("assets/fonts/Aloja-Extended/Aloja-Extended.ttf");
 }

@@ -1,5 +1,5 @@
 import "./home.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useGSAP } from "@gsap/react";
 import { Power3, gsap } from "gsap";
@@ -15,6 +15,12 @@ const Home = () => {
   let hero = useRef(null);
   let herotxt = useRef(null);
   let spanTxt = useRef(null);
+
+  const [activeTab, setActiveTab] = useState("story");
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
 
   useGSAP(() => {
     gsap.to(hero.current, {
@@ -134,26 +140,47 @@ const Home = () => {
                 <Col xs="12" sm="12" md="6" xl="6" style={{ margin: "auto" }}>
                   <div className="head">
                     <ul className="d-flex flex-wrap align-items-center">
-                      <li className="story active">The Story</li>
-                      <li className="concept">The Concept</li>
-                      <li className="sound">The Sound</li>
+                      <li
+                        className={`story ${
+                          activeTab === "story" ? "active" : ""
+                        }`}
+                        onClick={() => handleTabChange("story")}
+                      >
+                        The Story
+                      </li>
+                      <li
+                        className={`concept ${
+                          activeTab === "concept" ? "active" : ""
+                        }`}
+                        onClick={() => handleTabChange("concept")}
+                      >
+                        The Concept
+                      </li>
+                      <li
+                        className={`sound ${
+                          activeTab === "sound" ? "active" : ""
+                        }`}
+                        onClick={() => handleTabChange("sound")}
+                      >
+                        The Sound
+                      </li>
                     </ul>
 
-                    <p className="">
+                    <p className={activeTab === "story" ? "" : "d-none"}>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Ducimus autem esse porro ipsa odit cum, maxime nisi itaque
                       eius sit magni magnam quis molestias cumque, dignissimos
                       quos qui aliquid blanditiis.
                     </p>
 
-                    <p className="d-none">
+                    <p className={activeTab === "concept" ? "" : "d-none"}>
                       blanditiis ipsum dolor sit amet consectetur adipisicing
                       elit. Ducimus autem esse porro ipsa odit cum, maxime nisi
                       itaque eius sit magni magnam quis molestias cumque,
                       dignissimos quos qui aliquid blanditiis.
                     </p>
 
-                    <p className="d-none">
+                    <p className={activeTab === "sound" ? "" : "d-none"}>
                       ipsum Lorem dolor sit amet consectetur adipisicing elit.
                       Ducimus autem esse porro ipsa odit cum, maxime nisi itaque
                       eius sit magni magnam quis molestias cumque, dignissimos

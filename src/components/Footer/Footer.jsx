@@ -36,10 +36,10 @@ const Footer = () => {
             <Col>
               <ul className="text-end sites">
                 <li>
-                  <NavLink to={"#"}>Terms & Conditions</NavLink>
+                  <NavLink to={"/terms-of-service"}>Terms & Conditions</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"#"}>Privacy Policy</NavLink>
+                  <NavLink to={"/privacy-policy"}>Privacy Policy</NavLink>
                 </li>
                 <li>
                   <NavLink to={"#"}>FAQs</NavLink>

@@ -1,7 +1,7 @@
 main#shop * {
   font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  color: #000;
+  color: var(--black);
 }
 
 main#shop {

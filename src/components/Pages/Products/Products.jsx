@@ -133,18 +133,17 @@ const Products = () => {
   };
 
   const handleAddToCart = () => {
-
-    setisCartAdded(isCartAdded => !isCartAdded);
+    setisCartAdded((isCartAdded) => !isCartAdded);
 
     setTimeout(() => {
-      setisCartAdded(isCartAdded => !isCartAdded);
+      setisCartAdded((isCartAdded) => !isCartAdded);
     }, 2000);
 
     const productData = {
       image: product.image[currentImageIndex],
       title: product.title,
       price: product.price,
-      quantity: 1, 
+      quantity: 1,
     };
 
     const existingCartItems =
@@ -162,9 +161,8 @@ const Products = () => {
 
     localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
 
-    console.log("Product added to cart:", productData);
+    window.dispatchEvent(new Event("storage"));
   };
-
   return (
     <>
       <Container fluid className="product-detail">
@@ -185,7 +183,9 @@ const Products = () => {
           </Col>
           <Col xs="12" sm="12" md="6" xl="6">
             <section className="d-flex flex-column justify-content-between h-100">
-              <div class={`w-100 bg-dark d-flex align-items-center justify-content-center text-white z-50 antialiased added-to-cart ${isCartAdded ? 'translate-0' : 'translate-full'}`}>Product added to cart</div>
+              <div class={`w-100 bg-dark d-flex align-items-center justify-content-center text-white z-50 antialiased added-to-cart ${ isCartAdded ? "translate-0" : "translate-full"}`}>
+                Product added to cart
+              </div>
               <div className="head">
                 <h1 className="product-title">{product.title}</h1>
                 <h2 className="product-price">{product.price}</h2>
@@ -207,7 +207,7 @@ const Products = () => {
                 >
                   <div className="position-fixed w-100 z-50 modal-bg">
                     <div className="d-flex align-items-center justify-content-center text-center modal-inner">
-                      <div className="position-relative bg-white modal-in">
+                      <div className="position-relative modal-in">
                         <div
                           className="position-absolute modal-inn"
                           onClick={() => setSizeGuide(false)}
@@ -305,7 +305,7 @@ const Products = () => {
                   </button>
 
                   <div
-                    className={`position-absolute w-100 border border-dark bg-white ${
+                    className={`position-absolute w-100 border border-dark size-wrapper ${
                       showSizes ? "d-grid" : "d-none"
                     }`}
                     id="sizes"

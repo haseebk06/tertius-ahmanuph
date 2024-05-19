@@ -73,8 +73,9 @@ main#home * {
 }
 
 #albums .head ul {
-  border-bottom: solid 1px var(--middle-beige);
+  border-bottom: solid 1px var(--black);
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 #albums .head ul li {
@@ -222,6 +223,11 @@ img {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.head li.active {
+  background-color: var(--dark-beige);
+  color: var(--light-beige);
 }
 
 .albums-img {

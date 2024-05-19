@@ -35,7 +35,7 @@ const ProductCard = ({ image, title, price, productUrl }) => {
   };
 
   return (
-    <Col xs={12} s={6} md={4} lg={3} xl={3}>
+    <Col xs={12} sm={6} md={4} lg={3} xl={3}>
       <div className="product-card">
         {cursorStyle === "pointer" ? (
           <NavLink to={productUrl}>

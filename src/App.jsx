@@ -8,12 +8,15 @@ import {
   Loader,
   About,
   Gallery,
+  ScrollToTop,
+  TAndC,
+  PrivacyPolicy,
+  Contact
 } from "./components";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Lenis from "lenis";
-import Contact from "./components/Pages/Contact/Contact";
 
 function App() {
   const [showCart, setShowCart] = useState(false);
@@ -39,13 +42,17 @@ function App() {
       <Loader />
       <Header toggleCart={() => setShowCart(!showCart)} />
       <Cart showCart={showCart} closeCart={closeCart} />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/gallery" element={<Gallery />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/shop-all" element={<Shop />}></Route>
         <Route path="/products/:id" element={<Products />}></Route>
+        <Route path="/terms-of-service" element={<TAndC />}></Route>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
       </Routes>
       <Footer />
     </>

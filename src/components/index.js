@@ -7,5 +7,9 @@ import Cart from "./Pages/Cart";
 import Loader from "./Loader";
 import About from "./Pages/About";
 import Gallery from "./Pages/Gallery";
+import Contact from "./Pages/Contact";
+import ScrollToTop from "./ScrollToTop";
+import TAndC from "./Pages/TAndC";
+import PrivacyPolicy from "./Pages/PrivacyPolicy"
 
-export {Loader, Header, Shop, Products, Cart, Home, Footer, About, Gallery };
+export {Loader, Header, Shop, Products, Cart, Home, Footer, About, Gallery, Contact, ScrollToTop, TAndC, PrivacyPolicy };
