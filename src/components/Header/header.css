@@ -20,7 +20,7 @@ header {
 ul {
   list-style: none;
   padding: 0;
-  gap: 1.75rem;
+  gap: 3rem;
   margin-bottom: 0;
 }
 
@@ -35,7 +35,6 @@ button {
 }
 
 #logo {
-  margin-right: 28rem;
   width: 80px;
 }
 
