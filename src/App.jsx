@@ -11,7 +11,8 @@ import {
   ScrollToTop,
   TAndC,
   PrivacyPolicy,
-  Contact
+  Contact,
+  FAQ
 } from "./components";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -53,6 +54,7 @@ function App() {
         <Route path="/products/:id" element={<Products />}></Route>
         <Route path="/terms-of-service" element={<TAndC />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
+        <Route path="/faqs" element={<FAQ />}></Route>
       </Routes>
       <Footer />
     </>

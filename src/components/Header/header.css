@@ -42,14 +42,6 @@ nav ul li {
   transition: all ease 0.5s;
 }
 
-nav ul:hover li {
-  opacity: 1;
-}
-
-nav ul:hover li:not(:hover) {
-  opacity: 0.3;
-}
-
 #mob-menu, #mob-main {
   display: none;
 }

@@ -11,5 +11,6 @@ import Contact from "./Pages/Contact";
 import ScrollToTop from "./ScrollToTop";
 import TAndC from "./Pages/TAndC";
 import PrivacyPolicy from "./Pages/PrivacyPolicy"
+import FAQ from "./Pages/FAQ";
 
-export {Loader, Header, Shop, Products, Cart, Home, Footer, About, Gallery, Contact, ScrollToTop, TAndC, PrivacyPolicy };
+export {Loader, Header, Shop, Products, Cart, Home, Footer, About, Gallery, Contact, ScrollToTop, TAndC, PrivacyPolicy, FAQ };
