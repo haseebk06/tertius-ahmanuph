@@ -1,23 +1,34 @@
 import "./header.css";
 import logo from "../../logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Header = ({ toggleCart }) => {
   const [isHeader, setIsHeader] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
+  const { pathname } = useLocation();
+
   const updateCartQuantity = () => {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     const total = cartItems.reduce((total, item) => total + item.quantity, 0);
     setTotalQuantity(total);
   };
+  
+  const scrollToAlbums = () => {
+    setTimeout(() => {
+      const albumsSection = document.getElementById("albums");
+      if (albumsSection) {
+        albumsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   useEffect(() => {
-    // Initial load
+
+    console.log(pathname)
     updateCartQuantity();
 
-    // Update when localStorage changes
     const handleStorageChange = () => {
       updateCartQuantity();
     };
@@ -27,16 +38,9 @@ const Header = ({ toggleCart }) => {
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
-  }, []);
 
-  const scrollToAlbums = () => {
-    setTimeout(() => {
-      const albumsSection = document.getElementById("albums");
-      if (albumsSection) {
-        albumsSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
-  };
+  }, [pathname]);
+
 
   return (
     <>
@@ -47,7 +51,9 @@ const Header = ({ toggleCart }) => {
         <nav>
           <ul className="d-flex align-items-center">
             <li>
-              <NavLink to={`/`}>Home</NavLink>
+              <NavLink to={`/`}>
+                <img src={logo} id="logo" alt="logo" />
+              </NavLink>
             </li>
             <li>
               <NavLink to={`/about`}>About</NavLink>
@@ -68,12 +74,7 @@ const Header = ({ toggleCart }) => {
             </li>
           </ul>
         </nav>
-        <div>
-          <NavLink to={`/`}>
-            <img src={logo} id="logo" alt="logo" />
-          </NavLink>
-        </div>
-        <button className="d-block" onClick={toggleCart}>
+        <button className={`${pathname == "/shop-all" ? "d-block" : "d-none"}`} onClick={toggleCart}>
           Cart ( {totalQuantity} )
         </button>
       </header>
