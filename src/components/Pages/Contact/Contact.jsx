@@ -51,7 +51,7 @@ const Contact = () => {
           <Col xs="12" sm="12" md="6" xl="6">
             <div className="contact-txt-wrapper">
               <h2 className="text-left" ref={contactTXT}>
-                SEND SHADERA AN E-MAIL
+                SEND SHADERA Dey-Al AN E-MAIL
               </h2>
             </div>
             <p className="p-txt" ref={pTxt}>
@@ -85,7 +85,7 @@ const Contact = () => {
             <br />
             <br />
             <address>7532 Walnutwood Ave.</address> <br />
-            <a href="mailto:email@bandname.com">email@bandname.com</a> <br />
+            <a href="mailto:thirddim9nsion@gmail.com">thirddim9nsion@gmail.com</a> <br />
             <a href="tel:+88 (0) 101 0000">+88 (0) 101 0000</a> <br />
             <ul className="d-flex align-items-center justify-content-start mt-5">
               <li>

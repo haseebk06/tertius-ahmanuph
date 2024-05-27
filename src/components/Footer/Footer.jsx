@@ -11,7 +11,7 @@ const Footer = () => {
           <Row>
             <Col md="12">
               <h2 className="text-center py-3">
-                Tertius Ahmanuph
+                Ahma and Nupus
               </h2>
             </Col>
             <Col>
@@ -42,7 +42,7 @@ const Footer = () => {
                   <NavLink to={"/privacy-policy"}>Privacy Policy</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"#"}>FAQs</NavLink>
+                  <NavLink to={"/faqs"}>FAQs</NavLink>
                 </li>
               </ul>
             </Col>
