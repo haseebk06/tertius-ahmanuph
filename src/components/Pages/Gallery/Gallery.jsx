@@ -123,17 +123,25 @@ const Gallery = () => {
 
     <main id="gallery">
 
-      <h2 className="text-center pt-5" >Meet Shadera Dey-Al</h2>
-      <p className="text-center pb-5" >Gallery</p>
+      <h2 className="text-center pt-5" >
+        <div className="gal-txt-wrapper">
+          Meet Shadera Dey-Al
+        </div>
+      </h2>
+      <p className="text-center pb-5" >
+        <div className="gal-txt-wrapper">
+          Gallery
+        </div>
+      </p>
 
-      <section>
+      <section className="section">
 
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </section>
 
-      <section>
+      <section className="section">
         <div class="img"></div>
         <div class="img"></div>
         <div class="img"></div>

@@ -38,7 +38,11 @@
   margin-bottom: 20rem;
 }
 
-section {
+.gal-txt-wrapper {
+  overflow: hidden;
+}
+
+.section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* height: 50vh;
