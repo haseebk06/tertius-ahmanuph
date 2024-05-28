@@ -2,7 +2,7 @@ import "./home.css";
 import { useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useGSAP } from "@gsap/react";
-import { Power3, gsap } from "gsap";
+import { Expo, gsap } from "gsap";
 import cdCover from "../../../assets/img/cd-cover.jpg";
 import cd from "../../../assets/img/cd.jpg";
 import albumOne from "../../../assets/img/album_1.jpg";
@@ -25,25 +25,20 @@ const Home = () => {
   useGSAP(() => {
     gsap.to(hero.current, {
       scale: 1,
-      delay: 2,
-      ease: Power3.easeInOut,
-    });
-
-    gsap.to(hero.current.children, {
-      scale: 1,
-      delay: 2,
-      ease: Power3.easeInOut,
+      rotate: 0.001,
+      ease: Expo.easeInOut,
+      duration: 1.75
     });
 
     gsap.from(herotxt.current, {
       yPercent: 130,
-      delay: 2.5,
+      delay: 1,
       duration: 1,
     });
 
     gsap.from(spanTxt.current, {
       yPercent: 130,
-      delay: 2.5,
+      delay: 1,
       duration: 0.5,
     });
   }, []);
@@ -80,11 +75,7 @@ const Home = () => {
                     <div className="wvc-column-inner">
                       <div className="wvc-column-wrapper wpb_wrapper">
                         <div className="wvc-album-disc wvc-album-disc-align-left wvc-album-disc-cd wvc-album-disc-worn-border-yes wvc-album-disc-rotate-hover-stop wvc-element wvc-album-disc-has-link">
-                          <a
-                            className="wvc-album-disc-link-mask internal-link"
-                            href="#"
-                            title=""
-                          ></a>
+                          <span className="wvc-album-disc-link-mask internal-link"></span>
                           <div className="wvc-album-disc-cover-container">
                             <div
                               className="wvc-album-disc-disc-container wow wvc-album-disc-reveal animated"

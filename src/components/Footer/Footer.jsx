@@ -3,16 +3,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
-  
   return (
     <>
       <footer>
         <Container className="pb-5 footer-container" fluid>
           <Row>
             <Col md="12">
-              <h2 className="text-center py-3">
-                Ahma and Nupus
-              </h2>
+              <h2 className="text-center py-3">Tertius AhmaNuph</h2>
             </Col>
             <Col>
               <p className="text-base">Subscribe</p>
@@ -50,13 +47,22 @@ const Footer = () => {
             <Col>
               <ul className="text-end social">
                 <li>
-                  <NavLink to={"#"}>Instagram</NavLink>
+                  <a
+                    href={"https://www.instagram.com/shaderahdeyal?igsh=MW91OG5ndmJiaTlxZA%3D%3D&utm_source=qr"}
+                    target="_blank">
+                    Instagram
+                  </a>
                 </li>
                 <li>
-                  <NavLink to={"#"}>Facebook</NavLink>
+                  <a href={"https://www.facebook.com/share/VhvQaeAjtwL1W9o2/?mibextid=LQQJ4d"}
+                    target="_blank">
+                    Facebook
+                  </a>
                 </li>
                 <li>
-                  <NavLink to={"#"}>Twitter</NavLink>
+                  <a href={"https://www.tiktok.com/@shaderahdeyal?_t=8mgHauBCkuM&_r=1"} target="_blank">
+                    TikTok
+                  </a>
                 </li>
               </ul>
             </Col>

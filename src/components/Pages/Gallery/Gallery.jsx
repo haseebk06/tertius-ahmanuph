@@ -1,7 +1,8 @@
-import "./style.css"; import { useRef } from "react";
+import "./style.css";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { Row, Col } from "react-bootstrap";
+import { gsap, Expo } from "gsap";
+// import { Row, Col } from "react-bootstrap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
@@ -18,31 +19,89 @@ import gallaryImgSeven from "./images/image7.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const Gallery = () => {
+  const meet = useRef(null);
+  const gal = useRef(null);
+  const imgGal = useRef(null);
 
   useGSAP(() => {
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.img',
-        scrub: true
-      }
-    })
-      .to('.img', {
-        stagger: .2,
-        y: -500,
-        scrub: true
+    const tl = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".img",
+          scrub: true,
+        },
       })
+      .to(".img", {
+        stagger: 0.2,
+        y: -400,
+        scrub: true,
+      });
 
-  }, [])
+    const tlT = gsap.timeline();
+
+    tlT.set(meet.current.children, {
+      yPercent: 100,
+      rotate: 0.001,
+    });
+
+    tlT.set(gal.current, {
+      yPercent: 100,
+      rotate: 0.001,
+      opacity: 0,
+    });
+
+    tlT.set(imgGal.current, {
+      yPercent: 100,
+      rotate: 0.001,
+      opacity: 0,
+    });
+
+    tlT.to(
+      meet.current.children,
+      {
+        yPercent: 0,
+        rotate: 0.001,
+        stagger: 0.05,
+        ease: Expo.easeOut,
+        duration: 1.5,
+        clearProps: "all",
+        delay: 0.45,
+      },
+      "cool kids"
+    );
+
+    tlT.to(
+      gal.current,
+      {
+        yPercent: 0,
+        opacity: 1,
+        rotate: 0.001,
+        duration: 1.5,
+        ease: Expo.easeOut,
+        delay: 0.45,
+      },
+      "cool kids"
+    );
+
+    tlT.to(
+      imgGal.current,
+      {
+        yPercent: 0,
+        opacity: 1,
+        rotate: 0.001,
+        duration: 1.5,
+        ease: Expo.easeOut,
+        delay: 0.7,
+      },
+      "cool kids"
+    );
+  }, []);
 
   return (
     // <main id="gallery">
     //   <h2 className="text-center pt-5">Meet Shadera Dey-Al</h2>
     //   <p className="text-center pb-5">Gallery</p>
-
-
 
     //   <div class="mosaic-gallery">
     //     <Fancybox
@@ -122,26 +181,37 @@ const Gallery = () => {
     // </main>
 
     <main id="gallery">
-
-      <h2 className="text-center pt-5" >
-        <div className="gal-txt-wrapper">
-          Meet Shadera Dey-Al
+      <h2 className="text-center pt-5">
+        <div
+          className="gal-txt-wrapper d-flex flex-wrap aling-items-center justify-content-center"
+          ref={meet}
+        >
+          <div>M</div>
+          <div>e</div>
+          <div>e</div>
+          <div>t</div>
+          <div>&nbsp;</div>
+          <div>S</div>
+          <div>h</div>
+          <div>a</div>
+          <div>d</div>
+          <div>e</div>
+          <div>r</div>
+          <div>a</div>
+          <div>Dey-Al</div>
         </div>
       </h2>
-      <p className="text-center pb-5" >
-        <div className="gal-txt-wrapper">
-          Gallery
-        </div>
+      <p className="text-center pb-5" ref={gal}>
+        Gallery
       </p>
 
       <section className="section">
-
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </section>
 
-      <section className="section">
+      <section className="section" ref={imgGal}>
         <div class="img"></div>
         <div class="img"></div>
         <div class="img"></div>

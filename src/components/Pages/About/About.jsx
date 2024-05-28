@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import imageOne from "../../../assets/img/image10.jpeg";
 import { useGSAP } from "@gsap/react";
-import { Power2, gsap } from "gsap";
+import { Expo, gsap } from "gsap";
 import CSSPlugin from "gsap/CSSPlugin";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,31 +26,30 @@ const About = () => {
     const headLineFifth = headLineFourth.nextSibling;
     const headLineSixth = headLineFifth.nextSibling;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: aboutSec.current,
-        start: "top center",
-      },
-    });
+    const tl = gsap.timeline();
 
-    const txtTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: aboutSec.current,
-      },
-    });
+    tl.from(aboutMe.current.children, {
+      y: 120,
+      stagger: 0.1,
+      duration: .5,
+    }, "cool kids");
 
-    tl.to(imageReveal, {
-      duration: 1.4,
-      left: "100%",
-      ease: Power2.easeInOut,
-    }).from(image.current, {
+    tl.to(
+      imageReveal,
+      {
+        duration: 1.4,
+        left: "100%",
+        ease: Expo.easeInOut,
+      },
+      "cool kids"
+    ).from(image.current, {
       scale: 1.6,
-      ease: Power2.easeInOut,
+      ease: Expo.easeInOut,
       delay: -1.6,
       duration: 1.4,
     });
 
-    txtTl.from(
+    tl.from(
       [
         headLineFirst.children,
         headLineSecond.children,
@@ -59,24 +58,16 @@ const About = () => {
         headLineFifth.children,
         headLineSixth.children,
       ],
-      1,
       {
+        duration: 1,
         opacity: 0,
         y: 44,
         stagger: 0.1,
-        ease: Power2.easeInOut,
-        delay: 0.5,
+        ease: Expo.easeInOut,
       },
-      0.15
+      0.15,
+      "cool kids"
     );
-
-    gsap.to(aboutMe.current, {
-      scrollTrigger: {
-        trigger: aboutMe.current,
-      },
-      y: -50,
-      opacity: 1,
-    });
   }, []);
 
   return (
@@ -93,9 +84,13 @@ const About = () => {
               className="about-text d-flex flex-column align-items-center"
               ref={content}
             >
-              <h2 className="about-blob" ref={aboutMe}>
-                About Me
-              </h2>
+              <div className="about-blob-container">
+                <h2 className="about-blob" ref={aboutMe}>
+                  <div>About</div> 
+                  <div>SHADERA</div>
+                  <div>Dey-Al</div>
+                </h2>
+              </div>
               <p className="about-inner">
                 <div className="content-line">
                   <div className="content-line-inner">

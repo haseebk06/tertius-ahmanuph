@@ -2,7 +2,7 @@ import "./style.css";
 import { Container, Row, Col } from "react-bootstrap";
 import fb from "../../../assets/img/facebook-2.svg";
 import insta from "../../../assets/img/instagram.svg";
-import x from "../../../assets/img/twitter-x.svg";
+import tiktok from "../../../assets/img/tiktok.svg";
 import tube from "../../../assets/img/youtube.svg";
 import send from "../../../assets/img/send-1.svg";
 import { useRef } from "react";
@@ -89,18 +89,18 @@ const Contact = () => {
             <a href="tel:+88 (0) 101 0000">+88 (0) 101 0000</a> <br />
             <ul className="d-flex align-items-center justify-content-start mt-5">
               <li>
-                <a href="" target="_blank">
+                <a href="https://www.instagram.com/shaderahdeyal?igsh=MW91OG5ndmJiaTlxZA%3D%3D&utm_source=qr" target="_blank">
                   <img src={fb} alt="icon" width={30} />
                 </a>
               </li>
               <li>
-                <a href="" target="_blank">
+                <a href="https://www.facebook.com/share/VhvQaeAjtwL1W9o2/?mibextid=LQQJ4d" target="_blank">
                   <img src={insta} alt="icon" width={30} />
                 </a>
               </li>
               <li>
-                <a href="" target="_blank">
-                  <img src={x} alt="icon" width={30} />
+                <a href="https://www.tiktok.com/@shaderahdeyal?_t=8mgHauBCkuM&_r=1" target="_blank">
+                  <img src={tiktok} alt="icon" width={30} />
                 </a>
               </li>
               <li>

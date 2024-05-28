@@ -40,23 +40,28 @@
   font-weight: 700;
 }
 
+.about-blob-container {
+  overflow: hidden;
+}
+
 .about-blob {
   font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
-  font-size: clamp(1rem, -2.3333rem + 11.1111vw, 3rem);
-  height: 12rem;
+  font-size: clamp(1rem, -2.3333rem + 11.1111vw, 4rem);
+  /* height: 12rem;
   width: 12rem;
-  border-radius: 50%;
-  background: var(--dark-beige);
-  color: var(--coral) !important;
+  border-radius: 50%; */
+  /* background: var(--dark-beige);
+  color: var(--coral) !important; */
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
-  opacity: 0;
+  /* opacity: 0; */
   cursor: pointer;
-  margin-right: calc(25vw + 10rem);
+  /* margin-right: calc(25vw + 10rem); */
 }
 
 .content-line {

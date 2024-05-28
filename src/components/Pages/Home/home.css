@@ -12,7 +12,8 @@ main#home * {
   width: 100vw;
   height: 100vh;
   background: url("../../../assets/img/hero-img.jpg");
-  transform: scale(1.2);
+  transform: scale(1.5);
+  transform: rotate(0.001);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
