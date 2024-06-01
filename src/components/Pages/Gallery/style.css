@@ -38,10 +38,6 @@
   margin-bottom: 15rem;
 }
 
-.gal-txt-wrapper {
-  overflow: hidden;
-}
-
 .section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

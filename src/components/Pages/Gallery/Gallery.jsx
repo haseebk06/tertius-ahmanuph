@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap, Expo } from "gsap";
 // import { Row, Col } from "react-bootstrap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import Fancybox from "../Fancybox.jsx";
@@ -23,8 +24,9 @@ const Gallery = () => {
   const meet = useRef(null);
   const gal = useRef(null);
   const imgGal = useRef(null);
-
+  
   useGSAP(() => {
+    SplitType.create(meet.current);
     const tl = gsap
       .timeline({
         scrollTrigger: {
@@ -40,7 +42,7 @@ const Gallery = () => {
 
     const tlT = gsap.timeline();
 
-    tlT.set(meet.current.children, {
+    tlT.set(".char", {
       yPercent: 100,
       rotate: 0.001,
     });
@@ -57,16 +59,16 @@ const Gallery = () => {
       opacity: 0,
     });
 
-    tlT.to(
-      meet.current.children,
-      {
+    tlT.set(meet.current.children, {
+      overflow: "hidden"
+    });
+
+    tlT.to(".char", {
         yPercent: 0,
         rotate: 0.001,
         stagger: 0.05,
         ease: Expo.easeOut,
         duration: 1.5,
-        clearProps: "all",
-        delay: 0.45,
       },
       "cool kids"
     );
@@ -181,25 +183,8 @@ const Gallery = () => {
     // </main>
 
     <main id="gallery">
-      <h2 className="text-center pt-5">
-        <div
-          className="gal-txt-wrapper d-flex flex-wrap aling-items-center justify-content-center"
-          ref={meet}
-        >
-          <div>M</div>
-          <div>e</div>
-          <div>e</div>
-          <div>t</div>
-          <div>&nbsp;</div>
-          <div>S</div>
-          <div>h</div>
-          <div>a</div>
-          <div>d</div>
-          <div>e</div>
-          <div>r</div>
-          <div>a</div>
-          <div>Dey-Al</div>
-        </div>
+      <h2 className="text-center pt-5" ref={meet}>
+        Meet SHADERA Dey-Al
       </h2>
       <p className="text-center pb-5" ref={gal}>
         Gallery
