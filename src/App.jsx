@@ -1,4 +1,5 @@
 import {
+  Room,
   Header,
   Shop,
   Footer,
@@ -12,10 +13,10 @@ import {
   TAndC,
   PrivacyPolicy,
   Contact,
-  FAQ
+  FAQ,
 } from "./components";
 import { Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Lenis from "lenis";
 
@@ -46,6 +47,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/room" element={<Room />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/gallery" element={<Gallery />}></Route>

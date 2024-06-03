@@ -272,7 +272,6 @@ img {
   opacity: 0;
   transition: opacity 0.5s ease;
   color: var(--white);
-  text-transform: uppercase;
   font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
   z-index: 3;
 }

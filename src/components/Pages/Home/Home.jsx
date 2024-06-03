@@ -1,6 +1,7 @@
 import "./home.css";
 import { useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import { Expo, gsap } from "gsap";
 import cdCover from "../../../assets/img/cd-cover.jpg";
@@ -8,7 +9,30 @@ import cd from "../../../assets/img/cd.jpg";
 import albumOne from "../../../assets/img/album_1.jpg";
 import albumTwo from "../../../assets/img/album_2.jpg";
 import albumThree from "../../../assets/img/album_3.jpg";
-import albumFour from "../../../assets/img/album_4.jpg";
+
+const products = [
+  {
+    id: "3am-on-31st",
+    title: "3am on 31st",
+    price: "$110.00",
+    description: `Album Description.`,
+    image: albumOne,
+  },
+  {
+    id: "get-this-way",
+    title: "Get This Way",
+    price: "$110.00",
+    description: `Album Description..`,
+    image: albumTwo,
+  },
+  {
+    id: "homes",
+    title: "Homes",
+    price: "$110.00",
+    description: `Album Description..`,
+    image: albumThree,
+  },
+];
 
 const Home = () => {
   let albums = useRef(null);
@@ -61,13 +85,17 @@ const Home = () => {
         </section>
 
         <section id="albums">
+
           <div className="pt-5">
+
             <h2 className="text-center" ref={albums}>
               Albums
             </h2>
+
             <p className="text-center">
               Single and all music albums released between year and year!
             </p>
+
             <Container fluid>
               <Row>
                 <Col xs="12" sm="12" md="6" xl="6">
@@ -181,53 +209,25 @@ const Home = () => {
                 </Col>
               </Row>
             </Container>
+            
             <div className="d-flex align-items-center justify-content-center albums-img position-relative">
+
+            {products.map((product) => (
+
               <figure>
-                <img src={albumOne} alt="album one" />
+                <img src={product.image} alt="album one" />
                 <figcaption>
-                  <a
-                    href="https://preview.wolfthemes.live/loud/release/bad-a-album/"
-                    target="_blank"
-                  >
-                    bad a** album
-                  </a>
+                  <NavLink to={`/products/${product.id}`}>
+                    {product.title}
+                  </NavLink>
                 </figcaption>
               </figure>
-              <figure>
-                <img src={albumTwo} alt="album two" />
-                <figcaption>
-                  <a
-                    href="https://preview.wolfthemes.live/loud/release/concept-of-darkness/"
-                    target="_blank"
-                  >
-                    concept of darkness
-                  </a>
-                </figcaption>
-              </figure>
-              <figure>
-                <img src={albumThree} alt="album three" />
-                <figcaption>
-                  <a
-                    href="https://preview.wolfthemes.live/loud/release/song-name-album/"
-                    target="_blank"
-                  >
-                    song name from the album
-                  </a>
-                </figcaption>
-              </figure>
-              <figure>
-                <img src={albumFour} alt="album four" />
-                <figcaption>
-                  <a
-                    href="https://preview.wolfthemes.live/loud/release/witches-of-wind/"
-                    target="_blank"
-                  >
-                    witches of wind
-                  </a>
-                </figcaption>
-              </figure>
+
+            ))}
+
             </div>
           </div>
+
         </section>
       </main>
     </>

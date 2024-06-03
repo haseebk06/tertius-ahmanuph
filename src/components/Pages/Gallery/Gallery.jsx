@@ -184,7 +184,7 @@ const Gallery = () => {
 
     <main id="gallery">
       <h2 className="text-center pt-5" ref={meet}>
-        Meet SHADERA Dey-Al
+        Meet SHADERAH Dey-Al
       </h2>
       <p className="text-center pb-5" ref={gal}>
         Gallery

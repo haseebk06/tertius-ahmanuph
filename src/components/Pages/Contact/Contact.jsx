@@ -51,7 +51,7 @@ const Contact = () => {
           <Col xs="12" sm="12" md="6" xl="6">
             <div className="contact-txt-wrapper">
               <h2 className="text-left" ref={contactTXT}>
-                SEND SHADERA Dey-Al AN E-MAIL
+                SEND SHADERAH Dey-Al AN E-MAIL
               </h2>
             </div>
             <p className="p-txt" ref={pTxt}>

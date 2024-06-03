@@ -86,7 +86,7 @@ const About = () => {
         <Container fluid>
             <div className="about-blob-container">
               <h2 className="about-blob" ref={aboutMe}>
-                About SHADERA Dey-Al
+                About SHADERAH Dey-Al
               </h2>
             </div>
           <Row className="p-3">

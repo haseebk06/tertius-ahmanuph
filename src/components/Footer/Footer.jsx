@@ -1,11 +1,14 @@
 import "./footer.css";
 import { Container, Row, Col } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Footer = () => {
+
+  const {pathname} = useLocation();
+
   return (
     <>
-      <footer>
+      <footer className={`${pathname == "/room" ? "d-none" : "d-block"}`}>
         <Container className="pb-5 footer-container" fluid>
           <Row>
             <Col md="12">
