@@ -46,7 +46,7 @@ const Header = ({ toggleCart }) => {
     <>
       <header
         id="main-menu"
-        className="d-flex align-items-center justify-content-between"
+        className={`d-flex align-items-center justify-content-between ${pathname == "/room" ? "room__header" : ""}`}
       >
         <nav>
           <ul className="d-flex align-items-center">
