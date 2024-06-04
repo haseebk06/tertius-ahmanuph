@@ -10,6 +10,7 @@ import albumOne from "../../../assets/img/album_1.jpg";
 import albumTwo from "../../../assets/img/album_2.jpg";
 import albumThree from "../../../assets/img/album_3.jpg";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SplitType from "split-type";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -56,23 +57,29 @@ const Home = () => {
   };
 
   useGSAP(() => {
+
+    SplitType.create(herotxt.current)
+    SplitType.create(spanTxt.current)
+
     gsap.to(hero.current, {
       scale: 1,
       rotate: 0.001,
       ease: Expo.easeInOut,
       duration: 1.75
     });
-
-    gsap.from(herotxt.current, {
+    
+    gsap.from(".char", {
       yPercent: 130,
       delay: 1,
-      duration: 1,
+      duration: 0.75,
+      stagger: 0.05,
     });
-
+    
     gsap.from(spanTxt.current, {
       yPercent: 130,
       delay: 1,
       duration: 0.5,
+      stagger: 0.05,
     });
   }, []);
 
@@ -85,10 +92,7 @@ const Home = () => {
           </div>
           <div className="span-txt">
             <h2 ref={spanTxt}>
-              <span>New</span>
-              <span>Album</span>
-              <span>Out</span>
-              <span>Now</span>
+              New Album Out Now
             </h2>
           </div>
         </section>

@@ -19,7 +19,7 @@ main#home * {
   background-repeat: no-repeat;
 }
 
-.banner h1 {
+.banner h1 .char {
   font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif !important;
   font-weight: 700;
   font-size: clamp(1rem, 1rem + 6.8966vw, 8rem);
@@ -46,11 +46,14 @@ main#home * {
   overflow: hidden;
 }
 
-#hero-section h2 span {
+#hero-section h2 .char {
   font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: clamp(1rem, -2.3333rem + 11.1111vw, 3rem);
   color: #fffafa;
+}
+
+#hero-section h2 .word {
   margin: 0 20px;
 }
 
@@ -252,7 +255,10 @@ img {
   width: 100%;
 }
 
-.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
   display: none;
 }
 
