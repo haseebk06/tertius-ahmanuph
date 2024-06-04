@@ -9,6 +9,15 @@ import cd from "../../../assets/img/cd.jpg";
 import albumOne from "../../../assets/img/album_1.jpg";
 import albumTwo from "../../../assets/img/album_2.jpg";
 import albumThree from "../../../assets/img/album_3.jpg";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
+// import required modules
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 const products = [
   {
@@ -110,12 +119,10 @@ const Home = () => {
                               style={{
                                 transitionDelay: "0.4s;",
                                 visibility: "visible;",
-                              }}
-                            >
+                              }}>
                               <div
                                 className="wvc-album-disc-disc-inner"
-                                style={{ animationDuration: "3.5s;" }}
-                              >
+                                style={{ animationDuration: "3.5s;" }}>
                                 <img
                                   decoding="async"
                                   className="wvc-album-disc-disc-img"
@@ -160,25 +167,22 @@ const Home = () => {
                   <div className="head">
                     <ul className="d-flex flex-wrap align-items-center">
                       <li
-                        className={`story ${
-                          activeTab === "story" ? "active" : ""
-                        }`}
+                        className={`story ${activeTab === "story" ? "active" : ""
+                          }`}
                         onClick={() => handleTabChange("story")}
                       >
                         The Story
                       </li>
                       <li
-                        className={`concept ${
-                          activeTab === "concept" ? "active" : ""
-                        }`}
+                        className={`concept ${activeTab === "concept" ? "active" : ""
+                          }`}
                         onClick={() => handleTabChange("concept")}
                       >
                         The Concept
                       </li>
                       <li
-                        className={`sound ${
-                          activeTab === "sound" ? "active" : ""
-                        }`}
+                        className={`sound ${activeTab === "sound" ? "active" : ""
+                          }`}
                         onClick={() => handleTabChange("sound")}
                       >
                         The Sound
@@ -209,21 +213,39 @@ const Home = () => {
                 </Col>
               </Row>
             </Container>
-            
-            <div className="d-flex align-items-center justify-content-center albums-img position-relative">
 
-            {products.map((product) => (
+            <div className="d-flex align-items-center justify-content-center position-relative">
 
-              <figure>
-                <img src={product.image} alt="album one" />
-                <figcaption>
-                  <NavLink to={`/products/${product.id}`}>
-                    {product.title}
-                  </NavLink>
-                </figcaption>
-              </figure>
+              <Swiper
+                effect={'coverflow'}
+                grabCursor={true}
+                centeredSlides={true}
+                spaceBetween={100}
+                slidesPerView={'auto'}
+                coverflowEffect={{
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                }}
+                pagination={true}
+                modules={[EffectCoverflow, Pagination]}
+                className="mySwiper">
+                  
+                {products.map((product) => (
 
-            ))}
+                  <SwiperSlide>
+
+                    <NavLink to={`/products/${product.id}`}>
+                      <img src={product.image} alt="album one" />
+                    </NavLink>
+
+                  </SwiperSlide>
+
+                ))}
+
+              </Swiper>
 
             </div>
           </div>

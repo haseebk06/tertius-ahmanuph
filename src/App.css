@@ -7,6 +7,7 @@
   --middle-beige: #f9eee6;
   --white: #fff;
   --black: #000;
+  --light-black: #181818;
 }
 
 html.lenis,
@@ -31,7 +32,7 @@ html.lenis body {
 }
 
 ::selection {
-  background: var(--coral);
+  background: var(--light-black);
   color: var(--white);
 }
 
