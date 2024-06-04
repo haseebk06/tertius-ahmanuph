@@ -14,7 +14,7 @@ const Header = ({ toggleCart }) => {
     const total = cartItems.reduce((total, item) => total + item.quantity, 0);
     setTotalQuantity(total);
   };
-  
+
   const scrollToAlbums = () => {
     setTimeout(() => {
       const albumsSection = document.getElementById("albums");
@@ -46,8 +46,7 @@ const Header = ({ toggleCart }) => {
     <>
       <header
         id="main-menu"
-        className={`d-flex align-items-center justify-content-between ${pathname == "/room" ? "room__header" : ""}`}
-      >
+        className={`d-flex align-items-center justify-content-between ${pathname == "/room" ? "room__header" : ""}`}>
         <nav>
           <ul className="d-flex align-items-center">
             <li>
@@ -74,7 +73,7 @@ const Header = ({ toggleCart }) => {
             </li>
           </ul>
         </nav>
-        <button className={`${pathname == "/shop-all" ? "d-block" : "d-none"}`} onClick={toggleCart}>
+        <button className={`${pathname === "/shop-all" || /products\/.*$/.test(pathname) ? "d-block" : "d-none"}`} onClick={toggleCart}>
           Cart ( {totalQuantity} )
         </button>
       </header>
