@@ -62,13 +62,14 @@ main#home * {
   background: var(--light-beige);
 }
 
-#albums h2 {
+#albums h2 .char{
   color: var(--black);
+  font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
   font-size: clamp(1rem, 1rem + 6.8966vw, 5rem);
   letter-spacing: 1rem;
 }
 
-#albums .text-center~p {
+#albums .font {
   color: var(--black);
   letter-spacing: 3px;
   font-family: "Tertius Sans Italic", Helvetica, Arial, sans-serif;
@@ -84,6 +85,10 @@ main#home * {
 
 #albums .head ul li {
   padding: 1rem;
+}
+
+.album-txt-wrapper {
+  overflow: hidden;
 }
 
 .wvc-column-container {
@@ -183,7 +188,7 @@ main#home * {
   border-radius: 50%;
 }
 
-img {
+#home img {
   max-width: 100%;
   height: auto;
 }

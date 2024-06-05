@@ -9,16 +9,19 @@ import cd from "../../../assets/img/cd.jpg";
 import albumOne from "../../../assets/img/album_1.jpg";
 import albumTwo from "../../../assets/img/album_2.jpg";
 import albumThree from "../../../assets/img/album_3.jpg";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import SplitType from "split-type";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination } from "swiper/modules";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   {
@@ -57,30 +60,34 @@ const Home = () => {
   };
 
   useGSAP(() => {
-
-    SplitType.create(herotxt.current)
-    SplitType.create(spanTxt.current)
+    SplitType.create(herotxt.current);
+    SplitType.create(spanTxt.current);
+    SplitType.create(albums.current);
 
     gsap.to(hero.current, {
       scale: 1,
       rotate: 0.001,
       ease: Expo.easeInOut,
-      duration: 1.75
+      duration: 1.75,
     });
-    
-    gsap.from(".char", {
-      yPercent: 130,
-      delay: 1,
-      duration: 0.75,
-      stagger: 0.05,
-    });
-    
-    gsap.from(spanTxt.current, {
-      yPercent: 130,
+
+    gsap.from("#hero-section .char", {
+      yPercent: 100,
       delay: 1,
       duration: 0.5,
       stagger: 0.05,
     });
+
+    gsap.from("#albums .char", {
+      scrollTrigger: {
+        trigger: "#albums",
+        start: "top 80%",
+      },
+      yPercent: 100,
+      delay: 1,
+      duration: 0.5,
+      stagger: 0.05,
+    })
   }, []);
 
   return (
@@ -91,21 +98,19 @@ const Home = () => {
             <h1 ref={herotxt}>Tertius AhmaNuph</h1>
           </div>
           <div className="span-txt">
-            <h2 ref={spanTxt}>
-              New Album Out Now
-            </h2>
+            <h2 ref={spanTxt}>New Album Out Now</h2>
           </div>
         </section>
 
         <section id="albums">
-
           <div className="pt-5">
+            <div className="album-txt-wrapper">
+              <h2 className="text-center" ref={albums}>
+                Albums
+              </h2>
+            </div>
 
-            <h2 className="text-center" ref={albums}>
-              Albums
-            </h2>
-
-            <p className="text-center">
+            <p className="text-center font">
               Single and all music albums released between year and year!
             </p>
 
@@ -123,10 +128,12 @@ const Home = () => {
                               style={{
                                 transitionDelay: "0.4s;",
                                 visibility: "visible;",
-                              }}>
+                              }}
+                            >
                               <div
                                 className="wvc-album-disc-disc-inner"
-                                style={{ animationDuration: "3.5s;" }}>
+                                style={{ animationDuration: "3.5s;" }}
+                              >
                                 <img
                                   decoding="async"
                                   className="wvc-album-disc-disc-img"
@@ -171,22 +178,25 @@ const Home = () => {
                   <div className="head">
                     <ul className="d-flex flex-wrap align-items-center">
                       <li
-                        className={`story ${activeTab === "story" ? "active" : ""
-                          }`}
+                        className={`story ${
+                          activeTab === "story" ? "active" : ""
+                        }`}
                         onClick={() => handleTabChange("story")}
                       >
                         The Story
                       </li>
                       <li
-                        className={`concept ${activeTab === "concept" ? "active" : ""
-                          }`}
+                        className={`concept ${
+                          activeTab === "concept" ? "active" : ""
+                        }`}
                         onClick={() => handleTabChange("concept")}
                       >
                         The Concept
                       </li>
                       <li
-                        className={`sound ${activeTab === "sound" ? "active" : ""
-                          }`}
+                        className={`sound ${
+                          activeTab === "sound" ? "active" : ""
+                        }`}
                         onClick={() => handleTabChange("sound")}
                       >
                         The Sound
@@ -219,13 +229,12 @@ const Home = () => {
             </Container>
 
             <div className="d-flex align-items-center justify-content-center position-relative">
-
               <Swiper
-                effect={'coverflow'}
+                effect={"coverflow"}
                 grabCursor={true}
                 centeredSlides={true}
                 spaceBetween={100}
-                slidesPerView={'auto'}
+                slidesPerView={"auto"}
                 coverflowEffect={{
                   rotate: 50,
                   stretch: 0,
@@ -235,25 +244,18 @@ const Home = () => {
                 }}
                 pagination={true}
                 modules={[EffectCoverflow, Pagination]}
-                className="mySwiper">
-                  
+                className="mySwiper"
+              >
                 {products.map((product) => (
-
                   <SwiperSlide>
-
                     <NavLink to={`/products/${product.id}`}>
                       <img src={product.image} alt="album one" />
                     </NavLink>
-
                   </SwiperSlide>
-
                 ))}
-
               </Swiper>
-
             </div>
           </div>
-
         </section>
       </main>
     </>
