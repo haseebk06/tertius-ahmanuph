@@ -1,0 +1,272 @@
+@font-face {
+  font-family: Tertius Sans Normal;
+  src: url("../../../assets/fonts/GrandCru-LightS/GrandCru-LightS.otf");
+}
+
+.product-detail * {
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--white);
+}
+
+.product-detail {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.product-detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.porduct-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-title {
+  padding-left: 0;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.porduct-descripion {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.size-guide {
+  text-decoration: underline;
+}
+
+.btn-size {
+  background-color: var(--light-beige);
+  transition-duration: 0.2s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1.5rem;
+  border-top: solid;
+  border-top-color: var(--white);
+  border-top-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-size::after {
+  content: "";
+  background-color: var(--white);
+  border-radius: 50%;
+  height: 0.75rem;
+  width: 0.75rem;
+  display: block;
+}
+
+.btn-size:hover {
+  background-color: #e5e5e5;
+  color: var(--light-beige);
+}
+
+.btn-add-to-cart {
+  background-color: var(--white);
+  color: var(--light-beige);
+  transition-duration: 0.2s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1.5rem;
+  border-top: solid;
+  border-top-color: var(--white);
+  border-top-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.btn-add-to-cart::after {
+  content: "";
+  background-color: var(--light-beige);
+  border-radius: 50%;
+  height: 0.75rem;
+  width: 0.75rem;
+  display: block;
+}
+
+.btn-add-to-cart:hover {
+  background-color: var(--light-beige);
+  color: var(--white);
+}
+
+.btn-add-to-cart:hover::after {
+  background-color: var(--white);
+}
+
+.added-to-cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 75px;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 0.5s;
+  transition-property: transform;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.translate-full {
+  transform: translate(0, -100%) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.translate-0 {
+  transform: translate(0, 0) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.related-products {
+  font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 1rem + 6.8966vw, 3rem);
+  line-height: 2rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#sizes {
+  transform: translateY(calc(-100% - 72px));
+  max-height: 292px;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  z-index: 50;
+  left: 0;
+}
+
+.size-wrapper {
+  background: var(--light-beige);
+}
+
+.all-sizes {
+  transition-duration: 0.2s;
+  z-index: 50;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.all-sizes:hover {
+  background-color: #e5e5e5;
+  color: var(--light-beige);
+}
+
+.all-sizes::after {
+  content: "";
+  background-color: var(--white);
+  border-radius: 50%;
+  height: 0.75rem;
+  width: 0.75rem;
+  display: block;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.modal-bg {
+  background-color: #0006;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vh;
+}
+
+.modal-inner {
+  min-height: 100%;
+}
+
+.modal-in {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  --tw-shadow: 0 20px 25px -5px rgba(225, 225, 225, 0.1),
+    0 8px 10px -6px rgba(225, 225, 225, 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: 0 0 var(--white), 0 0 var(--white), 0 20px 25px -5px #ffffff1a,
+    0 8px 10px -6px #ffffff1a;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 var(--white)),
+    var(--tw-ring-shadow, 0 0 var(--white)), var(--tw-shadow);
+  text-align: left;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  max-width: 768px;
+  width: 91.666667%;
+  height: auto;
+}
+
+.modal-inn {
+  display: block;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  /* display: none; */
+  top: 0;
+  right: 0;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.sizeguide-table {
+  width: 100%;
+  overflow: auto;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.sizeguide-table p {
+  font-size: 1rem;
+  font-weight: lighter;
+  color: var(--light-beige);
+}
+
+.sizeguide-table table td,
+.sizeguide-table table th {
+  border: 1px solid;
+  color: var(--light-beige);
+}

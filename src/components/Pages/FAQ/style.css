@@ -1,0 +1,87 @@
+#faqs {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#faqs h2 {
+    font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+    font-size: clamp(1rem, 1rem + 6.8966vw, 5rem);
+    color: var(--white);
+    font-weight: 600;
+}
+
+#faqs h3 {
+    font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+    font-size: clamp(1rem, 1rem + 6.8966vw, 1.25rem);
+    color: var(--white);
+    font-weight: 600;
+}
+
+#faqs h3::after {
+    content: "";
+    background-color: currentColor;
+    border-radius: 9999px;
+    width: .75rem;
+    height: .75rem;
+    display: block;
+    right: 1.5rem;
+    position: absolute;
+}
+
+#faqs p {
+    font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+    font-size: clamp(1rem, 1rem + 6.8966vw, 1rem);
+    color: var(--white);
+    font-weight: 400;
+}
+
+.border-t-current {
+    border-top-color: var(--white)
+}
+
+.border-t {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.duration-150 {
+    transition-duration: .15s;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.relative {
+    position: relative;
+}
+
+.pb-5 {
+    padding-bottom: 3rem !important;
+}

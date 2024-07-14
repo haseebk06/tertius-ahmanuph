@@ -1,0 +1,21 @@
+main#shop * {
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: var(--white);
+}
+
+main#shop {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+#shop h1 {
+  font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 1rem + 6.8966vw, 3rem);
+  line-height: 2rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+}

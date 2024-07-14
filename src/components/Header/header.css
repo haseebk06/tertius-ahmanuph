@@ -1,0 +1,112 @@
+header * {
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--white);
+}
+
+header {
+  height: fit-content;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-bottom: 1px solid var(--white);
+  background: var(--light-beige);
+  position: sticky;
+  z-index: 40;
+  top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  gap: 3rem;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+}
+
+#logo {
+  width: 60px;
+}
+
+nav ul li {
+  transition: all ease 0.5s;
+}
+
+#mob-menu,
+#mob-main {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #main-menu {
+    display: none !important;
+  }
+  #mob-menu,
+  #mob-main {
+    display: block !important;
+  }
+  .hamburger {
+    transform: rotate(90deg);
+    letter-spacing: -5px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+  }
+
+  #logo {
+    margin-right: 0;
+  }
+
+  #mob-main {
+    font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+    --tw-border-opacity: 1;
+    border-right: solid;
+    border-right-color: #000;
+    border-right-color: rgba(0, 0, 0, var(--tw-border-opacity));
+    border-right-width: 1px;
+    width: 40%;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 0.7s;
+    transition-property: all;
+    --tw-shadow-color: #262626;
+    --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+    --tw-shadow: var(--tw-shadow-colored);
+    --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+      var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+    padding-top: 10px;
+    padding-bottom: 5rem;
+    padding: 1.5rem;
+    background-color: #262626;
+    max-width: 24rem;
+    height: 100%;
+    z-index: 10;
+    top: 72px;
+    position: fixed;
+  }
+
+  #mob-main a {
+    color: #fff;
+  }
+
+  #mob-main li {
+    padding: 0;
+  }
+
+  .left-0 {
+    left: 0;
+  }
+
+  .left-full {
+    left: -100%;
+  }
+}

@@ -1,0 +1,34 @@
+.room-img {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.room-img img {
+  width: 100%;
+  min-width: 1024px;
+  min-height: 100%;
+}
+
+.room__header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding-right: 2rem;
+  background: transparent;
+  border: none;
+}
+
+.transparent {
+  background-color: transparent !important;
+  backdrop-filter: blur(1rem);
+}
+
+.room__header * {
+  color: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .room-img {
+    overflow-x: scroll;
+  }
+}

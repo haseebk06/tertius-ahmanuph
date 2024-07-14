@@ -1,0 +1,57 @@
+:root {
+  --light-beige: #1c1d20;
+  --dark-bluey: #363b4e;
+  --coral: #e57962;
+  --dark-beige: #e5c5a5;
+  --light-bluey: #6370a1;
+  --middle-beige: #f9eee6;
+  --white: #fff;
+  --black: #000;
+  --light-black: #181818;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--light-black);
+  color: var(--white);
+}
+
+body {
+  background: var(--light-beige);
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: Tertius Sans Bold;
+  src: url("assets/fonts/Geotica-Three/Geotica-Three-W03-Open.ttf");
+}
+
+@font-face {
+  font-family: Tertius Sans Normal;
+  src: url("assets/fonts/GrandCru-LightS/GrandCru-LightS.otf");
+}
+
+@font-face {
+  font-family: Tertius Sans Italic;
+  src: url("assets/fonts/Aloja-Extended/Aloja-Extended.ttf");
+}
