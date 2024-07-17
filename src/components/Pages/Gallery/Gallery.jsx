@@ -54,6 +54,8 @@ const Gallery = () => {
       ease: Expo.easeInOut,
     });
 
+    const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
+
     let scrollTween = gsap.to(galleryWrapper.current, {
       xPercent: -100,
       x: () => window.innerWidth,
@@ -69,20 +71,24 @@ const Gallery = () => {
       },
     });
 
-    const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
+    galleryListImg.forEach(
+      (listImg) => {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: listImg,
+            containerAnimation: scrollTween,
+            toggleActions: "play none none reverse",
+          },
+        });
 
-    galleryListImg.forEach((listImg) => {
-      gsap.to(listImg, {
-        scrollTrigger: {
-          trigger: listImg,
-          containerAnimation: scrollTween,
-          toggleActions: "restart none none reverse",
-        },
-        scale: 1,
-        duration: 1.5,
-        ease: Expo.easeOut,
-      });
-    });
+        tl.to(listImg, {
+          scale: 1,
+          duration: 1.5,
+          ease: Expo.easeOut,
+        });
+      },
+      { scope: galleryWrapper.current }
+    );
   }, []);
 
   return (

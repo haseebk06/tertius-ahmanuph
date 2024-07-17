@@ -56,7 +56,7 @@ main#home * {
 }
 
 #hero-section h2 .word {
-  margin: 0 20px;
+  margin: 0 1.25rem; /* 20px */
 }
 
 #albums {
@@ -73,7 +73,7 @@ main#home * {
 
 #albums .font {
   color: var(--white);
-  letter-spacing: 3px;
+  letter-spacing: 0.1875rem; /* 3px */
   font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
   font-size: clamp(1rem, 1rem + 6.8966vw, 1.3rem);
   margin-bottom: 2rem;
@@ -126,7 +126,7 @@ main#home * {
 }
 
 .wvc-element {
-  margin-bottom: 35px;
+  margin-bottom: 2.1875rem; /* 35px */
 }
 
 .wvc-album-disc-align-left {
@@ -137,7 +137,7 @@ main#home * {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  max-width: 750px;
+  max-width: 46.875rem; /* 750px */
 }
 
 .wvc-album-disc-link-mask {
@@ -151,25 +151,25 @@ main#home * {
 }
 
 .wvc-album-disc-cover-container {
-  margin: 0 32% 10px 0;
+  margin: 0 32% 0.625rem 0; /* 10px */
   position: absolute;
   z-index: 0;
 }
 
 .animated.wvc-album-disc-reveal {
-  transform: translate3d(40%, 0, 0) rotate(-42deg);
+  transform: translate3d(2.5rem, 0, 0) rotate(-42deg); /* 40px */
 }
 
 .wvc-album-disc-cd .wvc-album-disc-disc-container {
   position: relative;
-  top: 20px;
-  left: 14px;
-  width: calc(100% - 28px);
-  height: calc(100% - 28px);
+  top: 1.25rem; /* 20px */
+  left: 14rem;
+  width: 28rem; /* 28px */
+  height: 28rem; /* 28px */
   border-radius: 50%;
-  box-shadow: inset 0px 0px 4px 1px rgba(255, 255, 255, 0.66),
-    0px 0px 0px 5px rgba(255, 255, 255, 0.22),
-    0px 0px 0px 3px rgba(255, 255, 255, 0.88);
+  box-shadow: inset 0 0 0.25rem 0.0625rem rgba(255, 255, 255, 0.66),
+    /* 4px 1px */ 0 0 0 0.3125rem rgba(255, 255, 255, 0.22),
+    /* 5px */ 0 0 0 0.1875rem rgba(255, 255, 255, 0.88); /* 3px */
 }
 
 .wvc-album-disc-disc-container {
@@ -191,10 +191,14 @@ main#home * {
 
 .wvc-album-disc-disc-img {
   backface-visibility: hidden;
-  width: 100%;
+  height: 100%;
   width: 100%;
   vertical-align: middle;
   border-radius: 50%;
+}
+
+.wvc-album-disc-cover-img {
+  width: 80%;
 }
 
 #home img {
@@ -207,9 +211,9 @@ main#home * {
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  height: 32.5%;
-  width: 32.5%;
-  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.99);
+  height: 2.03125rem; /* 32.5px */
+  width: 2.03125rem; /* 32.5px */
+  box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.99); /* 2px */
   z-index: 2;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 50%;
@@ -238,14 +242,14 @@ main#home * {
 
 #home .swiper {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 3.125rem; /* 50px */
+  padding-bottom: 3.125rem; /* 50px */
 }
 
 #home .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 800px;
+  width: 50rem; /* 800px */
   height: 100%;
 }
 
@@ -261,13 +265,23 @@ main#home * {
   display: none;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   .two a {
-    height: 200.95px !important;
+    height: 12.559375rem !important; /* 200.95px */
   }
 
   #home .swiper-slide {
     width: 100%;
     height: 100%;
+  }
+  .wvc-album-disc-cd .wvc-album-disc-disc-container {
+    top: 5rem; /* 20px */
+    left: 1rem;
+    width: 22rem; /* 28px */
+    height: 22rem; /* 28px */
+  }
+
+  .wvc-album-disc-cover-img {
+    width: 100%;
   }
 }

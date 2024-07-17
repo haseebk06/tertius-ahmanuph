@@ -18,6 +18,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import Loader from "../../Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,13 +40,19 @@ const products = [
 ];
 
 const Home = () => {
+  const [activeTab, setActiveTab] = useState("story");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("load", () => setIsLoading(false));
+    return () => window.removeEventListener("load", () => setIsLoading(false));
+  }, []);
+
   let albums = useRef(null);
   let hero = useRef(null);
   let herotxt = useRef(null);
   let spanTxt = useRef(null);
   let videoRef = useRef(null);
-
-  const [activeTab, setActiveTab] = useState("story");
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -92,6 +99,7 @@ const Home = () => {
 
   return (
     <>
+      {isLoading && <Loader />}
       <main id="home">
         <section ref={hero} id="hero-section" className="banner">
           <video
@@ -118,7 +126,7 @@ const Home = () => {
 
             <Container fluid>
               <Row>
-                <Col xs="12" sm="12" md="6" xl="6">
+                <Col xs="12" sm="12" md="12" lg="12" xl="6">
                   <div className="wvc-column-container wvc-column-bg-default wvc-column-bg-effect-none wvc-font-inherit wvc-column-font-inherit wvc-column-style-none wvc-border-color-none wvc-background-color-default">
                     <div className="wvc-column-inner">
                       <div className="wvc-column-wrapper wpb_wrapper">
@@ -140,8 +148,6 @@ const Home = () => {
                                   decoding="async"
                                   className="wvc-album-disc-disc-img"
                                   src={albumOne}
-                                  width="450"
-                                  height="450"
                                   alt="image"
                                   loading="lazy"
                                 />
@@ -154,8 +160,6 @@ const Home = () => {
                               decoding="async"
                               className="wvc-album-disc-cover-img"
                               src={albumOne}
-                              width="550"
-                              height="500"
                               alt="cd-cover"
                               title="cd-cover"
                               loading="lazy"
@@ -178,7 +182,8 @@ const Home = () => {
                 <Col
                   xs="12"
                   sm="12"
-                  md="6"
+                  md="12"
+                  lg="12"
                   xl="6"
                   style={{ marginTop: "1.5rem" }}
                 >
