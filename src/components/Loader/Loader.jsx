@@ -12,7 +12,7 @@ const Loader = () => {
     const tl = gsap.timeline();
 
     tl.to(loaderContainer.current, {
-      yPercent: -100,
+      yPercent: -110,
       rotate: 0.001,
       ease: Expo.easeInOut,
       duration: 1.75,
