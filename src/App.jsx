@@ -6,7 +6,6 @@ import {
   Products,
   Home,
   Cart,
-  Loader,
   About,
   Gallery,
   ScrollToTop,
@@ -24,12 +23,6 @@ import Lenis from "lenis";
 function App() {
   const [showCart, setShowCart] = useState(false);
   const [showAlbums, setShowAlbums] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener("load", () => setIsLoading(false));
-    return () => window.removeEventListener("load", () => setIsLoading(false));
-  }, []);
 
   const closeCart = () => {
     setShowCart(false);
@@ -53,7 +46,6 @@ function App() {
 
   return (
     <>
-      {isLoading && <Loader />}
       <Header
         toggleCart={() => setShowCart(!showCart)}
         toggleAlbums={() => setShowAlbums(!showAlbums)}

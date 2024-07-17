@@ -10,6 +10,10 @@
   --light-black: #181818;
 }
 
+html {
+  font-size: 16px;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -54,4 +58,16 @@ body {
 @font-face {
   font-family: Tertius Sans Italic;
   src: url("assets/fonts/Aloja-Extended/Aloja-Extended.ttf");
+}
+
+@media (max-width: 991.98px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576.98px) {
+  html {
+    font-size: 12px;
+  }
 }
