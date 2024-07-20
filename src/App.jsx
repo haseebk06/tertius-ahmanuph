@@ -32,17 +32,25 @@ function App() {
     setShowAlbums(!showAlbums);
   };
 
-  const lenis = new Lenis({
-    lerp: 0.1,
-    smooth: true,
-  });
+  useEffect(() => {
+    // if (window.innerWidth > 768) {
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smooth: true,
+    });
 
-  function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
     requestAnimationFrame(raf);
-  }
 
-  requestAnimationFrame(raf);
+    return () => {
+      lenis.destroy();
+    };
+    // }
+  }, []);
 
   return (
     <>
