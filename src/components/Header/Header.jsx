@@ -76,7 +76,7 @@ const Header = ({ toggleCart, toggleAlbums }) => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/`}>Home</NavLink>
+              <NavLink to={`/home`}>Home</NavLink>
             </li>
             <li>
               <NavLink to={`/about`}>About</NavLink>
@@ -132,10 +132,10 @@ const Header = ({ toggleCart, toggleAlbums }) => {
       >
         <ul className="d-flex flex-column align-items-left">
           <li>
-            <NavLink to={`/`}>Home</NavLink>
+            <NavLink to={`/home`}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={`/home#albums`}>Albums</NavLink>
+            <button onClick={toggleAlbums}>Albums</button>
           </li>
           <li>
             <NavLink to={`/about`}>About</NavLink>

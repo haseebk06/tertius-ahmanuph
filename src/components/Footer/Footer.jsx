@@ -48,7 +48,7 @@ const Footer = () => {
               </ul>
             </Col>
 
-            <Col sm={12} md={6} lg={4} xl={4} className="mt-3">
+            <Col sm={12} md={6} lg={4} xl={4} className="mt-3 mb-3">
               <ul className=" social">
                 <li>
                   <a
