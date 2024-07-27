@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
-import { Expo, gsap } from "gsap";
+import { gsap } from "gsap";
 import albumOne from "../../../assets/img/album_1.jpg";
 import albumTwo from "../../../assets/img/album_2.jpg";
 import heroVedio from "../../../assets/img/hero-vedio.mp4";
@@ -134,7 +134,7 @@ const Home = () => {
                                   decoding="async"
                                   className="wvc-album-disc-disc-img"
                                   src={albumOne}
-                                  alt="image"
+                                  alt="album"
                                   loading="lazy"
                                 />
                               </div>

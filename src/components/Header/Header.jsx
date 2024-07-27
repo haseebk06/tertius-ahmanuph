@@ -1,13 +1,13 @@
 import "./header.css";
 import logo from "../../logo.png";
 import { NavLink, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Header = ({ toggleCart, toggleAlbums }) => {
   const [isHeader, setIsHeader] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
-
   const { pathname } = useLocation();
+  const mobMainRef = useRef(null);
 
   const updateCartQuantity = () => {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -16,7 +16,6 @@ const Header = ({ toggleCart, toggleAlbums }) => {
   };
 
   useEffect(() => {
-    console.log(pathname);
     updateCartQuantity();
 
     const handleStorageChange = () => {
@@ -30,12 +29,43 @@ const Header = ({ toggleCart, toggleAlbums }) => {
     };
   }, [pathname]);
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        mobMainRef.current &&
+        !mobMainRef.current.contains(event.target) &&
+        !event.target.closest(".hamburger")
+      ) {
+        setIsHeader(false);
+      }
+    }
+
+    if (isHeader) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isHeader]);
+
+  useEffect(() => {
+    // Close the sidebar when the user navigates to a new page
+    setIsHeader(false);
+  }, [pathname]);
+
+  const handleHamburgerClick = () => {
+    setIsHeader((prev) => !prev);
+  };
+
   return (
     <>
       <header
         id="main-menu"
         className={`d-flex align-items-center justify-content-between ${
-          pathname == "/room" ? "room__header" : ""
+          pathname === "/room" ? "room__header" : ""
         }`}
       >
         <nav>
@@ -80,7 +110,7 @@ const Header = ({ toggleCart, toggleAlbums }) => {
       <header id="mob-menu">
         <div
           className={`d-flex align-items-center justify-content-between ${
-            pathname == "/room" ? "room__header" : ""
+            pathname === "/room" ? "room__header" : ""
           }`}
         >
           <div>
@@ -88,15 +118,16 @@ const Header = ({ toggleCart, toggleAlbums }) => {
               <img src={logo} id="logo" alt="logo" width={150} />
             </NavLink>
           </div>
-          <button className="hamburger" onClick={() => setIsHeader(!isHeader)}>
+          <button className="hamburger" onClick={handleHamburgerClick}>
             |||
           </button>
         </div>
       </header>
       <nav
+        ref={mobMainRef}
         id="mob-main"
         className={`${isHeader ? "left-0" : "left-full"} ${
-          pathname == "/room" ? "transparent" : ""
+          pathname === "/room" ? "transparent" : ""
         }`}
       >
         <ul className="d-flex flex-column align-items-left">
@@ -120,10 +151,10 @@ const Header = ({ toggleCart, toggleAlbums }) => {
           </li>
           <li>
             <button
-              className="d-block text-white"
+              className="d-block"
               onClick={() => {
                 toggleCart();
-                setIsHeader(!isHeader);
+                setIsHeader(false);
               }}
             >
               Cart ( {totalQuantity} )

@@ -25,7 +25,7 @@
 }
 
 .room__header * {
-  color: var(--white);
+  color: var(--bs-white);
 }
 
 @media (max-width: 1024px) {

@@ -97,7 +97,7 @@ const Gallery = () => {
         <div className="gallery-wrapper" ref={galleryWrapper}>
           <div className="gallery-intro">
             <div className="gallery-main-img">
-              <img src={gallaryImgZero} alt="image" className="c-img" />
+              <img src={gallaryImgZero} alt="gallery img" className="c-img" />
             </div>
 
             <div className="gallery-info">
@@ -157,7 +157,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgEight}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -167,7 +167,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgNine}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -177,7 +177,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgNineA}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -207,7 +207,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgThree}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -217,7 +217,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgFour}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -227,7 +227,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgFive}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -237,7 +237,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgSix}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -247,7 +247,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgSeven}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -257,7 +257,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgTen}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -267,7 +267,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgEleven}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -277,7 +277,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgTwelve}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -287,7 +287,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgThirteen}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -297,7 +297,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgFourteen}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -307,7 +307,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgFifteen}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>
@@ -317,7 +317,7 @@ const Gallery = () => {
                       <div className="gallery-img-wrapper">
                         <img
                           src={gallaryImgSixteen}
-                          alt="image"
+                          alt="gallery img"
                           className="gallery-visual-img"
                         />
                       </div>

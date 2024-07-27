@@ -86,16 +86,16 @@ nav ul li {
     padding-top: 10px;
     padding-bottom: 5rem;
     padding: 1.5rem;
-    background-color: #262626;
+    background-color: var(--light-beige);
     max-width: 24rem;
     height: 100%;
     z-index: 10;
-    top: 72px;
+    top: 5.5rem;
     position: fixed;
   }
 
   #mob-main a {
-    color: #fff;
+    color: var(--white);
   }
 
   #mob-main li {

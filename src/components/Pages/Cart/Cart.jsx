@@ -1,10 +1,29 @@
 import "./cart.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Cart = ({ showCart, closeCart }) => {
+  const cartRef = useRef(null);
+
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || []
   );
+
+  useEffect(() => {
+    function handleClickOutsideCart(event) {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        closeCart();
+      }
+    }
+
+    if (showCart) {
+      document.addEventListener("mousedown", handleClickOutsideCart);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutsideCart);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideCart);
+    };
+  }, [cartItems, setCartItems]);
 
   useEffect(() => {
     const handleStorageChange = () => {
@@ -18,7 +37,7 @@ const Cart = ({ showCart, closeCart }) => {
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
-  }, []);
+  }, [closeCart, showCart]);
 
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -55,7 +74,10 @@ const Cart = ({ showCart, closeCart }) => {
 
   return (
     <>
-      <div className={`cart-container ${showCart ? "right-0" : "right-full"}`}>
+      <div
+        className={`cart-container ${showCart ? "right-0" : "right-full"}`}
+        ref={cartRef}
+      >
         <div className="grid">
           <div className="vh-100 d-flex flex-column">
             <div className="border-bottom h-18 border-light d-flex align-items-center justify-content-between">

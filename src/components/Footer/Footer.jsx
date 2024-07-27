@@ -13,7 +13,7 @@ const Footer = () => {
             <Col md="12">
               <h2 className="text-center py-3">Tertius AhmaNuph</h2>
             </Col>
-            <Col>
+            <Col sm={12} md={12} lg={6} xl={6}>
               <p className="text-base">Subscribe</p>
               <p className="text-xs">
                 Receive email updates about launches, new product info,
@@ -30,7 +30,7 @@ const Footer = () => {
               </form>
             </Col>
 
-            <Col>
+            <Col sm={12} md={12} lg={6} xl={6}>
               <ul className="text-end sites">
                 <li>
                   <NavLink to={"/terms-of-service"}>Terms & Conditions</NavLink>
@@ -44,7 +44,7 @@ const Footer = () => {
               </ul>
             </Col>
 
-            <Col>
+            <Col sm={12} md={12} lg={6} xl={6}>
               <ul className="text-end social">
                 <li>
                   <a
