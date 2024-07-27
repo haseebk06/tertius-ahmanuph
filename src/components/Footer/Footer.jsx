@@ -7,13 +7,17 @@ const Footer = () => {
 
   return (
     <>
-      <footer className={`${pathname == "/room" ? "d-none" : "d-block"}`}>
+      <footer
+        className={`${
+          pathname == "/room" || pathname == "/gallery" ? "d-none" : "d-block"
+        }`}
+      >
         <Container className="pb-5 footer-container" fluid>
           <Row>
-            <Col md="12">
+            <Col md={12}>
               <h2 className="text-center py-3">Tertius AhmaNuph</h2>
             </Col>
-            <Col sm={12} md={12} lg={6} xl={6}>
+            <Col sm={12} md={6} lg={4} xl={4} className="mt-3 mb-3">
               <p className="text-base">Subscribe</p>
               <p className="text-xs">
                 Receive email updates about launches, new product info,
@@ -30,8 +34,8 @@ const Footer = () => {
               </form>
             </Col>
 
-            <Col sm={12} md={12} lg={6} xl={6}>
-              <ul className="text-end sites">
+            <Col sm={12} md={6} lg={4} xl={4} className="mt-3 mb-3">
+              <ul className=" sites">
                 <li>
                   <NavLink to={"/terms-of-service"}>Terms & Conditions</NavLink>
                 </li>
@@ -44,8 +48,8 @@ const Footer = () => {
               </ul>
             </Col>
 
-            <Col sm={12} md={12} lg={6} xl={6}>
-              <ul className="text-end social">
+            <Col sm={12} md={6} lg={4} xl={4} className="mt-3">
+              <ul className=" social">
                 <li>
                   <a
                     href={
