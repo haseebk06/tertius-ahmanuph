@@ -41,15 +41,8 @@ const products = [
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState("story");
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener("load", () => setIsLoading(false));
-    return () => window.removeEventListener("load", () => setIsLoading(false));
-  }, []);
 
   let albums = useRef(null);
-  let hero = useRef(null);
   let herotxt = useRef(null);
   let spanTxt = useRef(null);
   let videoRef = useRef(null);
@@ -62,13 +55,6 @@ const Home = () => {
     SplitType.create(herotxt.current);
     SplitType.create(spanTxt.current);
     SplitType.create(albums.current);
-
-    gsap.to(hero.current, {
-      scale: 1,
-      rotate: 0.001,
-      ease: Expo.easeInOut,
-      duration: 1.75,
-    });
 
     gsap.from("#hero-section .char", {
       yPercent: 100,
@@ -99,9 +85,9 @@ const Home = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
+      <Loader />
       <main id="home">
-        <section ref={hero} id="hero-section" className="banner">
+        <section id="hero-section" className="banner">
           <video
             ref={videoRef}
             src={heroVedio}

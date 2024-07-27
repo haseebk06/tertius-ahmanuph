@@ -1,13 +1,12 @@
 :root {
-  --light-beige: #1c1d20;
+  --light-beige: #fff1da;
   --dark-bluey: #363b4e;
-  --coral: #e57962;
+  --coral: rgb(229, 121, 98);
   --dark-beige: #e5c5a5;
   --light-bluey: #6370a1;
   --middle-beige: #f9eee6;
-  --white: #fff;
-  --black: #000;
-  --light-black: #181818;
+  --white: #000;
+  --black: #00000033;
 }
 
 html {
@@ -35,14 +34,9 @@ html.lenis body {
   pointer-events: none;
 }
 
-::selection {
-  background: var(--light-black);
-  color: var(--white);
-}
-
 body {
   background: var(--light-beige);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @font-face {

@@ -95,7 +95,9 @@ const Header = ({ toggleCart, toggleAlbums }) => {
       </header>
       <nav
         id="mob-main"
-        className={`${isHeader ? "left-0" : "left-full"} transparent`}
+        className={`${isHeader ? "left-0" : "left-full"} ${
+          pathname == "/room" ? "transparent" : ""
+        }`}
       >
         <ul className="d-flex flex-column align-items-left">
           <li>

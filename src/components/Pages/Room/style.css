@@ -30,6 +30,7 @@
 
 @media (max-width: 1024px) {
   .room-img {
-    overflow-x: scroll;
+    overflow-x: auto;
+    width: max-content;
   }
 }

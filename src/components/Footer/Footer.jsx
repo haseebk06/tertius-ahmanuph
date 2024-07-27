@@ -24,11 +24,9 @@ const Footer = () => {
                   type="email"
                   name="email"
                   placeholder="Email Address *"
-                  className="outline-none text-xs email border-black border"
+                  className="newsletter-email outline-none text-xs email border-black border"
                 />
-                <button className="bg-white text-black btn-submit h-10 ms-2">
-                  Submit
-                </button>
+                <button className="btn-submit h-10 ms-2">Submit</button>
               </form>
             </Col>
 

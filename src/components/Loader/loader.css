@@ -1,5 +1,5 @@
 .loader-wrapper {
-  height: 110%;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -9,4 +9,8 @@
   top: 0;
   z-index: 99;
   transition: border-radius 2s ease-in-out;
+}
+
+.loader-wrapper img {
+  max-width: 100%;
 }

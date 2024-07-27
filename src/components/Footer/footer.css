@@ -59,7 +59,13 @@ footer h2 {
   border-width: 1px;
 }
 
+.newsletter-email {
+  background: var(--light-beige);
+}
+
 .btn-submit {
+  background: var(--white);
+  color: var(--light-beige);
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }

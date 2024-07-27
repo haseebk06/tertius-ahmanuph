@@ -32,15 +32,13 @@ const About = () => {
       overflow: "hidden",
     });
 
-    tl.set(".about-blob .char",{
-        yPercent: 100,
-      }
-    );
+    tl.set(".about-blob .char", {
+      yPercent: 100,
+    });
 
     tl.set(".about-blob .line", {
-        overflow: "hidden",
-      }
-    );
+      overflow: "hidden",
+    });
 
     tl.to(
       ".about-blob .char",
@@ -48,7 +46,7 @@ const About = () => {
         yPercent: 0,
         stagger: 0.05,
         duration: 0.5,
-        delay: 0.5
+        delay: 0.5,
       },
       "cool kids"
     );
@@ -84,15 +82,21 @@ const About = () => {
     <>
       <section id="about" className="py-5" ref={aboutSec}>
         <Container fluid>
-            <div className="about-blob-container">
-              <h2 className="about-blob" ref={aboutMe}>
-                About SHADERAH Dey-Al
-              </h2>
-            </div>
+          <div className="about-blob-container">
+            <h2 className="about-blob" ref={aboutMe}>
+              Shaderah Dey-Al
+            </h2>
+          </div>
           <Row className="p-3">
-            <Col xs="12" sm="12" md="12" lg="12" xl="6"
+            <Col
+              xs="12"
+              sm="12"
+              md="12"
+              lg="12"
+              xl="6"
               className="about-text d-flex flex-column align-items-center"
-              ref={content}>
+              ref={content}
+            >
               <div className="about-inner" ref={bio}>
                 <p>
                   Modest, feminine, and reigning from the south side of
