@@ -39,6 +39,16 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  background: var(--light-beige);
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-beige);
+  border-radius: 5rem;
+}
+
 @font-face {
   font-family: Tertius Sans Bold;
   src: url("assets/fonts/Geotica-Three/Geotica-Three-W03-Open.ttf");
