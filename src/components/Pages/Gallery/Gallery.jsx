@@ -127,8 +127,8 @@ const Gallery = () => {
 
                 <div className="line-wrapper">
                   <div className="lines">
-                    the founder of Third Dim9nsion, Shadera is also well versed
-                    in{" "}
+                    the founder of Tertius AhmaNuph, Shaderah is also well
+                    versed in{" "}
                   </div>
                 </div>
 

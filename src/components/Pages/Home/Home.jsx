@@ -197,26 +197,24 @@ const Home = () => {
                       <ol>
                         <li>
                           <span className="size">Get This Way</span> <br />
-                          About wanting a lover to hear one’s cry for
-                          companionship & the willingness to face all feats to
-                          have & maintain it.
+                          WANTING a lover to hear one’s cry for companionship &
+                          the willingness to face all feats to have & maintain
+                          it.
                         </li>
                         <br />
                         <li>
                           <span className="size">3am On Jan 31st</span> <br />
-                          About wanting to be recognized as more than just an
-                          ex-lover who one talks to about loneliness & normal
-                          people issues, even though one side feels wrong
-                          overall.
+                          WANTING to be recognized as more than just an ex-lover
+                          who one talks to about loneliness & normal people
+                          issues, even though one side feels wrong overall.
                         </li>
                         <br />
                         <li>
                           <span className="size">Lonely Homes</span> <br />
-                          About recognizing the lack of companionship in a
-                          genuine form. Feeling disconnected from the world
-                          willingly & unwillingly; setting oneself apart.
-                          Emptiness within a place meant to be full & lively.
-                          Shaderah
+                          RECOGNIZING the lack of companionship in a genuine
+                          form. Feeling disconnected from the world willingly &
+                          unwillingly; setting oneself apart. Emptiness within a
+                          place meant to be full & lively. Shaderah
                         </li>
                       </ol>
                     </p>
@@ -225,7 +223,7 @@ const Home = () => {
                       <ol>
                         <li>
                           <span className="size">Get This Way</span> <br />
-                          Written while traveling long lonely drives for work as
+                          WRITTEN while traveling long lonely drives for work as
                           a CDL professional, the song is a representation of
                           the reality of wanting a good partner & the
                           willingness to maintain a good relationship behavior.
@@ -235,14 +233,14 @@ const Home = () => {
                         <br />
                         <li>
                           <span className="size">3am On Jan 31st</span> <br />
-                          Stemming from a late night conversation with an
+                          STEMMING from a late night conversation with an
                           ex-lover during what some people call “scary hours” in
                           hopes to soothe human urges through another person.
                         </li>
                         <br />
                         <li>
                           <span className="size">Lonely Homes</span> <br />
-                          Came from a larger project being written, mainly to be
+                          CAME from a larger project being written, mainly to be
                           seen as a piece of said project in regard to how
                           Shaderah was feeling throughout her to date life.
                         </li>
