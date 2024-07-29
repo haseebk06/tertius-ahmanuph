@@ -20,6 +20,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 import Lenis from "lenis";
+import Scroll from "./components/Pages/Scroll/Scroll";
 
 function App() {
   const [showCart, setShowCart] = useState(false);
@@ -68,6 +69,7 @@ function App() {
         <Route path="/terms-of-service" element={<TAndC />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="/faqs" element={<FAQ />}></Route>
+        <Route path="/scroll" element={<Scroll />}></Route>
       </Routes>
       <Footer />
     </>
