@@ -40,14 +40,14 @@ const Gallery = () => {
     gsap.set(".lines", { yPercent: 100 });
     gsap.set(".char", { yPercent: 100 });
 
-    gsap.to(".gallery-info .char", {
+    gsap.to(".char", {
       yPercent: 0,
       stagger: 0.05,
       duration: 1.7,
       ease: Expo.easeInOut,
     });
 
-    gsap.to(".gallery-info .lines", {
+    gsap.to(".lines", {
       yPercent: 0,
       stagger: 0.05,
       duration: 1.7,
@@ -63,7 +63,7 @@ const Gallery = () => {
       scrollTrigger: {
         trigger: galleryWrapper.current,
         start: "top 90px",
-        end: () => "+=12000",
+        end: () => "+=" + galleryWrapper.current.offsetWidth + "px",
         scrub: true,
         pin: true,
         invalidateOnRefresh: true,
