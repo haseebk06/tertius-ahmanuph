@@ -1,5 +1,5 @@
 import "./style.css";
-import { useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,46 +33,48 @@ const Gallery = () => {
   const about = useRef(null);
   const galleryWrapper = useRef(null);
 
-  useGSAP(() => {
-    SplitType.create(meet.current);
-    SplitType.create(owner.current);
-    gsap.set(".gallery-visual-item", { scale: 0 });
-    gsap.set(".lines", { yPercent: 100 });
-    gsap.set(".char", { yPercent: 100 });
+  useLayoutEffect(() => {
+    const splitText = () => {
+      SplitType.create(meet.current);
+      SplitType.create(owner.current);
+      gsap.set(".gallery-visual-item", { scale: 0 });
+      gsap.set(".lines", { yPercent: 100 });
+      gsap.set(".char", { yPercent: 100 });
 
-    gsap.to(".char", {
-      yPercent: 0,
-      stagger: 0.05,
-      duration: 1.7,
-      ease: Expo.easeInOut,
-    });
+      gsap.to(".gallery-info .char", {
+        yPercent: 0,
+        stagger: 0.05,
+        duration: 1.7,
+        ease: Expo.easeInOut,
+      });
 
-    gsap.to(".lines", {
-      yPercent: 0,
-      stagger: 0.05,
-      duration: 1.7,
-      ease: Expo.easeInOut,
-    });
+      gsap.to(".gallery-info .lines", {
+        yPercent: 0,
+        stagger: 0.05,
+        duration: 1.7,
+        ease: Expo.easeInOut,
+      });
+    };
 
-    const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
+    const setupAnimations = () => {
+      const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
 
-    let scrollTween = gsap.to(galleryWrapper.current, {
-      xPercent: -100,
-      x: () => window.innerWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: galleryWrapper.current,
-        start: "top 90px",
-        end: () => "+=" + galleryWrapper.current.offsetWidth + "px",
-        scrub: true,
-        pin: true,
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-      },
-    });
+      let scrollTween = gsap.to(galleryWrapper.current, {
+        xPercent: -100,
+        x: () => window.innerWidth,
+        ease: "none",
+        scrollTrigger: {
+          trigger: galleryWrapper.current,
+          start: "top 90px",
+          end: () => "+=" + galleryWrapper.current.offsetWidth,
+          scrub: true,
+          pin: true,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      });
 
-    galleryListImg.forEach(
-      (listImg) => {
+      galleryListImg.forEach((listImg) => {
         let tl = gsap.timeline({
           scrollTrigger: {
             trigger: listImg,
@@ -86,9 +88,14 @@ const Gallery = () => {
           duration: 1.5,
           ease: Expo.easeOut,
         });
-      },
-      { scope: galleryWrapper.current }
-    );
+      });
+    };
+
+    // Use requestAnimationFrame to ensure the component has fully rendered before running the setup
+    requestAnimationFrame(() => {
+      splitText();
+      setupAnimations();
+    });
   }, []);
 
   return (

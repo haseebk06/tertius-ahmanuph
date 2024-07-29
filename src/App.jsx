@@ -14,6 +14,7 @@ import {
   Contact,
   FAQ,
   Albums,
+  Videos,
 } from "./components";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
@@ -61,6 +62,7 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/gallery" element={<Gallery />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/youtube" element={<Videos />}></Route>
         <Route path="/shop-all" element={<Shop />}></Route>
         <Route path="/products/:id" element={<Products />}></Route>
         <Route path="/terms-of-service" element={<TAndC />}></Route>

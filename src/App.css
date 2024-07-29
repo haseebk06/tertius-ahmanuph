@@ -41,7 +41,7 @@ body {
 
 ::-webkit-scrollbar {
   background: var(--light-beige);
-  width: 0.7rem;
+  width: 1.375rem;
 }
 
 ::-webkit-scrollbar-thumb {

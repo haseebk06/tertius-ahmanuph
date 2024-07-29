@@ -1,0 +1,18 @@
+main#youtube-vedios {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.yt-header-txt {
+    font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+    font-size: clamp(2rem, -2.3333rem + 11.1111vw, 5rem);
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: var(--white);
+}
+
+.yt-vedios {
+    height: 32rem;
+    width: 100%;
+}
