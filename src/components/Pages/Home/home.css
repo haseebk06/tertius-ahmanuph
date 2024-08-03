@@ -1,7 +1,7 @@
 main#home * {
   font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  color: var(--white);
+  color: var(--dark);
 }
 
 .hero-video {
@@ -231,7 +231,7 @@ main#home * {
 }
 
 .head li.active {
-  background-color: var(--white);
+  background-color: var(--dark-brown);
   color: var(--light-beige) !important;
 }
 
@@ -241,14 +241,14 @@ main#home * {
 
 #home .swiper {
   width: 100%;
-  padding-top: 3.125rem; /* 50px */
-  padding-bottom: 3.125rem; /* 50px */
+  padding-top: 3.125rem;
+  padding-bottom: 3.125rem;
 }
 
 #home .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 50rem; /* 800px */
+  width: 50rem;
   height: 100%;
 }
 
@@ -266,7 +266,7 @@ main#home * {
 
 @media (max-width: 991.98px) {
   .two a {
-    height: 12.559375rem !important; /* 200.95px */
+    height: 12.559375rem !important;
   }
 
   #home .swiper-slide {
@@ -274,10 +274,10 @@ main#home * {
     height: 100%;
   }
   .wvc-album-disc-cd .wvc-album-disc-disc-container {
-    top: 5rem; /* 20px */
+    top: 5rem;
     left: 1rem;
-    width: 22rem; /* 28px */
-    height: 22rem; /* 28px */
+    width: 22rem;
+    height: 22rem;
   }
 
   .wvc-album-disc-cover-img {

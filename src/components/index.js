@@ -10,9 +10,28 @@ import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
 import ScrollToTop from "./ScrollToTop";
 import TAndC from "./Pages/TAndC";
-import PrivacyPolicy from "./Pages/PrivacyPolicy"
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import FAQ from "./Pages/FAQ";
 import Room from "./Pages/Room";
 import Albums from "./Albums";
+import Videos from "./Pages/Videos";
 
-export {Loader, Room, Header, Shop, Products, Cart, Home, Footer, About, Gallery, Contact, ScrollToTop, TAndC, PrivacyPolicy, FAQ, Albums };
+export {
+  Loader,
+  Room,
+  Header,
+  Shop,
+  Products,
+  Cart,
+  Home,
+  Footer,
+  About,
+  Gallery,
+  Contact,
+  ScrollToTop,
+  TAndC,
+  PrivacyPolicy,
+  FAQ,
+  Albums,
+  Videos,
+};

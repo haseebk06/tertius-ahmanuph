@@ -1,0 +1,17 @@
+#youtube {
+  padding: 3rem 0;
+}
+
+#youtube h2 {
+  font-family: "Tertius Sans Bold", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.5rem, 1rem + 6.8966vw, 4rem);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.yt-videos {
+  width: 100%;
+  height: 25rem;
+  opacity: 0;
+  transform: translateY(50px);
+}

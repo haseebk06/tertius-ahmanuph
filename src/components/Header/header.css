@@ -13,7 +13,7 @@ header {
   border-bottom: 1px solid var(--white);
   background: var(--light-beige);
   position: sticky;
-  z-index: 40;
+  z-index: 99;
   top: 0;
 }
 
@@ -89,7 +89,7 @@ nav ul li {
     background-color: var(--light-beige);
     max-width: 24rem;
     height: 100%;
-    z-index: 10;
+    z-index: 99;
     top: 5.5rem;
     position: fixed;
   }

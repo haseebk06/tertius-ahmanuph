@@ -191,7 +191,6 @@ const Products = () => {
     <>
       <Container fluid className="product-detail">
         <Row>
-
           <Col xs="12" sm="12" md="6" xl="6">
             <figure>
               <img
@@ -209,7 +208,11 @@ const Products = () => {
 
           <Col xs="12" sm="12" md="6" xl="6">
             <section className="d-flex flex-column justify-content-between h-100">
-              <div class={`w-100 bg-dark d-flex align-items-center justify-content-center text-white z-50 antialiased added-to-cart ${ isCartAdded ? "translate-0" : "translate-full"}`}>
+              <div
+                class={`w-100 d-flex align-items-center justify-content-center antialiased added-to-cart ${
+                  isCartAdded ? "translate-0" : "translate-full"
+                }`}
+              >
                 Product added to cart
               </div>
 
@@ -219,29 +222,34 @@ const Products = () => {
               </div>
 
               <div className="foot">
-
                 <p className="porduct-descripion w-50">{product.description}</p>
 
-                <button className="size-guide"
-                  onClick={() => setSizeGuide(true)}>
+                <button
+                  className="size-guide"
+                  onClick={() => setSizeGuide(true)}
+                >
                   Size Guide
                 </button>
 
-                <div className={`z-50 position-relative ${
+                <div
+                  className={`z-50 position-relative ${
                     sizeGuide ? "d-flex" : "d-none"
                   }`}
-                  onClick={() => setSizeGuide(false)}>
+                  onClick={() => setSizeGuide(false)}
+                >
                   <div className="position-fixed w-100 z-50 modal-bg">
                     <div className="d-flex align-items-center justify-content-center text-center modal-inner">
                       <div className="position-relative modal-in">
-                        <div className="position-absolute modal-inn"
-                          onClick={() => setSizeGuide(false)}>
+                        <div
+                          className="position-absolute modal-inn"
+                          onClick={() => setSizeGuide(false)}
+                        >
                           &times;
                         </div>
 
                         <div className="d-flex justify-content-between text-xs">
-                          <h4>Size Guide</h4>
-                          <div>{product.title}</div>
+                          <h4 className="sz-color">Size Guide</h4>
+                          <div className="sz-color">{product.title}</div>
                         </div>
 
                         <div className="sizeguide-table">
@@ -317,7 +325,6 @@ const Products = () => {
                           </table>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -400,7 +407,7 @@ const Products = () => {
               </div>
             </section>
           </Col>
-          
+
           <h2 className="text-center related-products">Related Products</h2>
 
           {relatedProducts.map((relatedProduct) => (

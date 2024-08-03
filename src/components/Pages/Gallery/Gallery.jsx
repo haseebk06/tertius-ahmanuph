@@ -1,11 +1,9 @@
 import "./style.css";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import gallaryImgZero from "./images/image0.jpeg";
 import gallaryImgOne from "./images/image1.jpeg";
 import gallaryImgTwo from "./images/image2.jpeg";
@@ -33,9 +31,11 @@ const Gallery = () => {
   const about = useRef(null);
   const galleryWrapper = useRef(null);
 
-  useGSAP(() => {
+  useLayoutEffect(() => {
     SplitType.create(meet.current);
     SplitType.create(owner.current);
+    const container = galleryWrapper.current;
+
     gsap.set(".gallery-visual-item", { scale: 0 });
     gsap.set(".lines", { yPercent: 100 });
     gsap.set(".char", { yPercent: 100 });
@@ -54,16 +54,14 @@ const Gallery = () => {
       ease: Expo.easeInOut,
     });
 
-    const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
-
-    let scrollTween = gsap.to(galleryWrapper.current, {
+    let scrollTween = gsap.to(container, {
       xPercent: -100,
       x: () => window.innerWidth,
       ease: "none",
       scrollTrigger: {
-        trigger: galleryWrapper.current,
+        trigger: container,
         start: "top 90px",
-        end: () => "+=" + galleryWrapper.current.offsetWidth + "px",
+        end: () => "+=" + container.offsetWidth + "px",
         scrub: true,
         pin: true,
         invalidateOnRefresh: true,
@@ -71,30 +69,34 @@ const Gallery = () => {
       },
     });
 
-    galleryListImg.forEach(
-      (listImg) => {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: listImg,
-            containerAnimation: scrollTween,
-            toggleActions: "play none none reverse",
-          },
-        });
+    const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
 
-        tl.to(listImg, {
-          scale: 1,
-          duration: 1.5,
-          ease: Expo.easeOut,
-        });
-      },
-      { scope: galleryWrapper.current }
-    );
+    galleryListImg.forEach((listImg) => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: listImg,
+          containerAnimation: scrollTween,
+          toggleActions: "play none none reverse",
+          // markers: true,
+        },
+      });
+
+      tl.to(listImg, {
+        scale: 1,
+        duration: 1.5,
+        ease: Expo.easeOut,
+      });
+    });
   }, []);
 
   return (
     <main id="gallery">
       <section className="section gallery-hero">
-        <div className="gallery-wrapper" ref={galleryWrapper}>
+        <div
+          className="gallery-wrapper"
+          id="gallery-wrapper"
+          ref={galleryWrapper}
+        >
           <div className="gallery-intro">
             <div className="gallery-main-img">
               <img src={gallaryImgZero} alt="gallery img" className="c-img" />

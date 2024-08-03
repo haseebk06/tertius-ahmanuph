@@ -14,8 +14,9 @@ import {
   Contact,
   FAQ,
   Albums,
+  Videos,
 } from "./components";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 import Lenis from "lenis";
@@ -54,13 +55,15 @@ function App() {
       <Albums showAlbums={showAlbums} hideAlbums={closeAlbums} />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Navigate to="/room" />} />
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/room" element={<Room />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/gallery" element={<Gallery />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/shop-all" element={<Shop />}></Route>
+        <Route path="/youtube" element={<Videos />}></Route>
         <Route path="/products/:id" element={<Products />}></Route>
         <Route path="/terms-of-service" element={<TAndC />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>

@@ -8,17 +8,16 @@
 .albums-container {
   --tw-border-opacity: 1;
   border-right: solid;
-  border-right-color: var(--white);
-  border-right-color: rgba(225, 225, 225, var(--tw-border-opacity));
+  border-right-color: var(--dark-brown);
   border-right-width: 1px;
   width: 40%;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 0.7s;
   transition-property: all;
-  --tw-shadow-color: #f1f1f1;
+  --tw-shadow-color: var(--dark-brown);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   --tw-shadow: var(--tw-shadow-colored);
-  --tw-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.25);
+  --tw-shadow: 0 25px 50px -12px #6e3d3d50;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
     var(--tw-ring-shadow, 0 0 var(--white)), var(--tw-shadow);
   color: var(--white);
@@ -28,7 +27,7 @@
   background: var(--light-beige);
   max-width: 24rem;
   height: 100%;
-  z-index: 41;
+  z-index: 100;
   top: 0;
   position: fixed;
   display: flex;
@@ -50,11 +49,11 @@
 }
 
 .albums-container h5 {
-    position: absolute;
-    font-size: 16px;
-    bottom: 1rem;
-    right: 1rem;
-    cursor: pointer;
+  position: absolute;
+  font-size: 16px;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
 }
 
 .albums-container .divider {

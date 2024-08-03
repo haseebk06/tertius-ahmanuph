@@ -76,7 +76,7 @@ const Header = ({ toggleCart, toggleAlbums }) => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/`}>Home</NavLink>
+              <NavLink to={`/home`}>Home</NavLink>
             </li>
             <li>
               <NavLink to={`/about`}>About</NavLink>
@@ -86,6 +86,9 @@ const Header = ({ toggleCart, toggleAlbums }) => {
             </li>
             <li>
               <NavLink to={`/gallery`}>Gallery</NavLink>
+            </li>
+            <li>
+              <NavLink to={`/youtube`}>YouTube</NavLink>
             </li>
             <li>
               <NavLink to={`/contact`}>Contact</NavLink>
@@ -132,16 +135,19 @@ const Header = ({ toggleCart, toggleAlbums }) => {
       >
         <ul className="d-flex flex-column align-items-left">
           <li>
-            <NavLink to={`/`}>Home</NavLink>
+            <NavLink to={`/home`}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={`/home#albums`}>Albums</NavLink>
+            <div onClick={toggleAlbums}>Albums</div>
           </li>
           <li>
             <NavLink to={`/about`}>About</NavLink>
           </li>
           <li>
-            <NavLink to={`/gallery`}>Projects</NavLink>
+            <NavLink to={`/gallery`}>Gallery</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/youtube`}>YouTbe</NavLink>
           </li>
           <li>
             <NavLink to={`/contact`}>Contact</NavLink>
@@ -150,7 +156,7 @@ const Header = ({ toggleCart, toggleAlbums }) => {
             <NavLink to={`/shop-all`}>Shop All</NavLink>
           </li>
           <li>
-            <button
+            <div
               className="d-block"
               onClick={() => {
                 toggleCart();
@@ -158,7 +164,7 @@ const Header = ({ toggleCart, toggleAlbums }) => {
               }}
             >
               Cart ( {totalQuantity} )
-            </button>
+            </div>
           </li>
         </ul>
       </nav>

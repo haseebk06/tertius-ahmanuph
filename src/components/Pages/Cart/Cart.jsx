@@ -20,10 +20,11 @@ const Cart = ({ showCart, closeCart }) => {
     } else {
       document.removeEventListener("mousedown", handleClickOutsideCart);
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutsideCart);
     };
-  }, [cartItems, setCartItems]);
+  }, [showCart]); // Only depend on showCart
 
   useEffect(() => {
     const handleStorageChange = () => {
@@ -37,7 +38,7 @@ const Cart = ({ showCart, closeCart }) => {
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
-  }, [closeCart, showCart]);
+  }, []);
 
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -80,7 +81,7 @@ const Cart = ({ showCart, closeCart }) => {
       >
         <div className="grid">
           <div className="vh-100 d-flex flex-column">
-            <div className="border-bottom h-18 border-light d-flex align-items-center justify-content-between">
+            <div className="border-bottom h-18 border-dark d-flex align-items-center justify-content-between">
               <button className="antialiased" onClick={closeCart}>
                 Close
               </button>
@@ -90,12 +91,12 @@ const Cart = ({ showCart, closeCart }) => {
                 Close
               </button>
             </div>
-            <section className="overflow-y-scroll scrollbar-hidden antialiased">
+            <section className="overflow-y-scroll scrollbar-thin">
               <ul className="d-flex flex-column">
                 {cartItems.map((carts, index) => (
                   <li
                     key={index}
-                    className="d-flex justify-content-between antialiased border-bottom border-light"
+                    className="d-flex justify-content-between antialiased border-bottom border-dark"
                   >
                     <div className="w-50" style={{ marginRight: "1.5rem" }}>
                       <img
@@ -118,7 +119,7 @@ const Cart = ({ showCart, closeCart }) => {
                         >
                           <label className="sr-only">Quantity, 1</label>
                           <div
-                            className="w-100 h-25 d-flex align-items-center border border-light"
+                            className="w-100 h-25 d-flex align-items-center border border-dark"
                             style={{ borderRadius: "9999px" }}
                           >
                             <form
@@ -190,7 +191,7 @@ const Cart = ({ showCart, closeCart }) => {
                   <a
                     width="full"
                     href="#"
-                    className="w-100 position-relative border-top border-light text-start d-flex align-items-center justify-content-between antialiased btn-checkout"
+                    className="w-100 position-relative border-top border-dark text-start d-flex align-items-center justify-content-between antialiased btn-checkout"
                   >
                     Checkout
                   </a>

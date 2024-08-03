@@ -64,6 +64,7 @@
   cursor: pointer;
   margin-top: 10px;
 }
+
 .btn-size::after {
   content: "";
   background-color: var(--white);
@@ -73,9 +74,13 @@
   display: block;
 }
 
+.btn-size::after:hover {
+  background-color: var(--dark-brown);
+}
+
 .btn-size:hover {
-  background-color: #e5e5e5;
-  color: var(--light-beige);
+  background-color: var(--dark-beige);
+  color: var(--dark-brown);
 }
 
 .btn-add-to-cart {
@@ -95,9 +100,10 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
 .btn-add-to-cart::after {
   content: "";
-  background-color: var(--light-beige);
+  background-color: var(--dark-beige);
   border-radius: 50%;
   height: 0.75rem;
   width: 0.75rem;
@@ -105,12 +111,7 @@
 }
 
 .btn-add-to-cart:hover {
-  background-color: var(--light-beige);
-  color: var(--white);
-}
-
-.btn-add-to-cart:hover::after {
-  background-color: var(--white);
+  background-color: var(--dark-brown);
 }
 
 .added-to-cart {
@@ -124,6 +125,9 @@
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  background: var(--dark-brown);
+  z-index: 100;
+  color: var(--light-beige);
 }
 
 .translate-full {
@@ -157,7 +161,7 @@
 }
 
 .size-wrapper {
-  background: var(--light-beige);
+  background: var(--dark-brown);
 }
 
 .all-sizes {
@@ -174,20 +178,25 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  color: var(--light-beige);
 }
 
 .all-sizes:hover {
-  background-color: #e5e5e5;
-  color: var(--light-beige);
+  background: var(--dark-beige);
+  color: var(--dark-brown);
 }
 
 .all-sizes::after {
   content: "";
-  background-color: var(--white);
+  background-color: var(--light-beige);
   border-radius: 50%;
   height: 0.75rem;
   width: 0.75rem;
   display: block;
+}
+
+.all-sizes:hover::after {
+  background-color: var(--dark-brown);
 }
 
 .z-50 {
@@ -233,6 +242,8 @@
   max-width: 768px;
   width: 91.666667%;
   height: auto;
+  background: var(--dark-brown);
+  color: var(--light-beige);
 }
 
 .modal-inn {
@@ -240,9 +251,10 @@
   padding-top: 1rem;
   padding-right: 1rem;
   cursor: pointer;
-  /* display: none; */
   top: 0;
   right: 0;
+  color: var(--light-beige);
+  font-size: 2.5rem;
 }
 
 .text-xs {
@@ -250,6 +262,10 @@
   line-height: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.sz-color {
+  color: var(--light-beige);
 }
 
 .sizeguide-table {
@@ -269,4 +285,8 @@
 .sizeguide-table table th {
   border: 1px solid;
   color: var(--light-beige);
+}
+
+.table > :not(caption) > * > * {
+  background-color: var(--dark-brown);
 }

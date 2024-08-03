@@ -9,17 +9,16 @@
 .cart-container {
   --tw-border-opacity: 1;
   border-left: solid;
-  border-left-color: var(--white);
-  border-left-color: rgba(225, 225, 225, var(--tw-border-opacity));
+  border-left-color: var(--dark-brown);
   border-left-width: 1px;
   width: 40%;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 0.7s;
   transition-property: all;
-  --tw-shadow-color: #f1f1f1;
+  --tw-shadow-color: var(--dark-brown);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   --tw-shadow: var(--tw-shadow-colored);
-  --tw-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.25);
+  --tw-shadow: 0 25px 50px -12px #6e3d3d50;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
     var(--tw-ring-shadow, 0 0 var(--white)), var(--tw-shadow);
   color: var(--white);
@@ -29,9 +28,13 @@
   background: var(--light-beige);
   max-width: 24rem;
   height: 100%;
-  z-index: 41;
+  z-index: 100;
   top: 0;
   position: fixed;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 0.5rem;
 }
 
 .right-0 {
@@ -50,10 +53,6 @@
   height: 72px;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-}
-
-.overflow-y-scroll {
-  overflow-y: scroll;
 }
 
 .text-neutral-300 {
@@ -138,7 +137,6 @@
   padding-right: 0.5rem;
   --tw-text-opacity: 1;
   color: var(--white);
-  color: rgba(225, 225, 225, var(--tw-text-opacity));
 }
 
 .font-medium {
@@ -161,7 +159,7 @@
 }
 
 .btn-checkout:hover {
-  background-color: #e5e5e5;
+  background-color: var(--dark-brown);
   color: var(--light-beige);
 }
 
