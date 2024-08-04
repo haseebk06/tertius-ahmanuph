@@ -12,6 +12,18 @@
 .yt-videos {
   width: 100%;
   height: 25rem;
-  opacity: 0;
-  transform: translateY(50px);
+}
+
+.yt-title {
+  font-size: clamp(1rem, 1rem + 6.8966vw, 2rem);
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: var(--dark-brown);
+}
+
+.yt-description {
+  font-size: clamp(1rem, 1rem + 6.8966vw, 1rem);
+  font-family: "Tertius Sans Normal", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: var(--dark-brown);
 }

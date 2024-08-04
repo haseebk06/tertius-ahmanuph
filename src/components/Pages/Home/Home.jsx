@@ -18,7 +18,6 @@ import "swiper/css/pagination";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import Loader from "../../Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,7 +84,6 @@ const Home = () => {
 
   return (
     <>
-      <Loader />
       <main id="home">
         <section id="hero-section" className="banner">
           <video

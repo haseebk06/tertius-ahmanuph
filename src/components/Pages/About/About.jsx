@@ -100,7 +100,7 @@ const About = () => {
               <div className="about-inner" ref={bio}>
                 <p>
                   Modest, feminine, and reigning from the south side of
-                  Savannah, Georgia, Shaderah Dey-Al is an upcoming local artist
+                  Savannah, Georgia, Shaderah Dey Al is an upcoming local artist
                   whose sound puts a new light into today’s music scene. Her
                   unique voice and style ties together electro pop, hip hop, emo
                   rock, uk grime, and world music into one cohesive addictive
@@ -122,7 +122,7 @@ const About = () => {
                   which taught her how to enjoy writing and speaking poetry to
                   others. Her first experience with recording music came in high
                   school when she and a friend agreed to become a musical group,
-                  from there they rec-orded on combined studio equipment that
+                  from there they recorded on combined studio equipment that
                   included an old church microphone gifted, a gifted dell
                   computer, and a jail broken FL Studio Audio recording system;
                   unto which gave Shaderah the opportunity to develop more into
@@ -133,8 +133,8 @@ const About = () => {
                   there on, after high school graduation, Shaderah began to
                   attend other local artists’ events to get her face out before
                   finally deciding to do professional studio recordings herself
-                  and stepping into the Sa-vannah music scene; where her first
-                  performance was at the local Pote Palooza event in Octo-ber of
+                  and stepping into the Savannah music scene; where her first
+                  performance was at the local Pote Palooza event in October of
                   2020. Since then Shaderah has become a known and respected
                   artist who has been able to perform at events such as The
                   Gentleman’s Podcast “Drunken Spelling Bee” and The Unity in
@@ -143,11 +143,11 @@ const About = () => {
 
                 <p>
                   The hopes of Shaderah are to not only continue to grow
-                  musically, but to also help bring to-gether the entertainment
+                  musically, but to also help bring together the entertainment
                   industry of Savannah together so as the saying goes, “We all
                   Eat!” This dream is what she wants to see flourish and be
                   maintained for generations to come, even after she finds
-                  herself out of the main performance spotlight. Shaderah Dey-Al
+                  herself out of the main performance spotlight. Shaderah Dey Al
                   looks forward to all opportunities presented to her and
                   believes there’s a world full of them starting in her own
                   hometown. She looks forward to officially releasing her debut

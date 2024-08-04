@@ -4,12 +4,32 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
 import { gsap, Expo } from "gsap";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Videos = () => {
   const ytText = useRef();
+
+  const [videos, setVideos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const API_KEY = "AIzaSyAJ9Y9-LqrTMvh6LZD4TBRL-Mpk_RJHBsc";
+  const CHANNEL_ID = "UC6-7QqFThvSDqr9QV3LwRfA";
+  const API_URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=10&type=video`;
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        setVideos(data.items);
+        setIsLoading(false);
+      })
+      .catch((error) => console.error("Error fetching videos:", error));
+    setIsLoading(false);
+  }, []);
 
   useGSAP(() => {
     SplitType.create(ytText.current);
@@ -29,14 +49,14 @@ const Videos = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: video,
+          markers: true,
         },
       });
 
-      tl.to(video, {
+      tl.from(video, {
         y: 0,
         opacity: 1,
         duration: 1.4,
-        stagger: 0.5,
         delay: 1,
       });
     });
@@ -47,30 +67,29 @@ const Videos = () => {
       <Container fluid>
         <Row>
           <h2 className="text-center pb-5" ref={ytText}>
-            YouTube Videos
+            The Album Dive
           </h2>
-          <Col sm={12} md={12} lg={6}>
-            <iframe
-              className="yt-videos"
-              src="https://www.youtube.com/embed/n-ENCH-e7PQ"
-              title="Shaderah Dey-Al: Get This Way Silhouette"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </Col>
-          <Col sm={12} md={12} lg={6}>
-            <iframe
-              className="yt-videos"
-              src="https://www.youtube.com/embed/n-ENCH-e7PQ"
-              title="Shaderah Dey-Al: Get This Way Silhouette"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </Col>
+          {videos.map((video) => (
+            <Col sm={12} md={12} lg={6} key={video.id.videoId}>
+              <div className="yt-videos-wrapper">
+                <iframe
+                  className="yt-videos"
+                  src={`https://www.youtube.com/embed/${
+                    video.id.videoId || <Skeleton count={10} />
+                  }`}
+                  frameBorder="0"
+                  allowFullScreen
+                  title={video.snippet.title || <Skeleton />}
+                ></iframe>
+                <h3 className="yt-title">
+                  {video.snippet.title || <Skeleton />}
+                </h3>
+                <p className="yt-description">
+                  {video.snippet.description || <Skeleton />}
+                </p>
+              </div>
+            </Col>
+          ))}
         </Row>
       </Container>
     </main>
