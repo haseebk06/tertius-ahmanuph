@@ -16,8 +16,8 @@ const Videos = () => {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const API_KEY = "AIzaSyAJ9Y9-LqrTMvh6LZD4TBRL-Mpk_RJHBsc";
-  const CHANNEL_ID = "UC6-7QqFThvSDqr9QV3LwRfA";
+  const API_KEY = "*************";
+  const CHANNEL_ID = "*****************";
   const API_URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=10&type=video`;
 
   useEffect(() => {
