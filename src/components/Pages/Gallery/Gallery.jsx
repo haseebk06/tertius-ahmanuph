@@ -1,8 +1,9 @@
 import "./style.css";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap, Expo } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import gallaryImgZero from "./images/image0.jpeg";
 import gallaryImgOne from "./images/image1.jpeg";
@@ -23,7 +24,7 @@ import gallaryImgFourteen from "./images/image14.jpeg";
 import gallaryImgFifteen from "./images/image15.jpeg";
 import gallaryImgSixteen from "./images/image16.jpeg";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Gallery = () => {
   const meet = useRef(null);
@@ -31,63 +32,52 @@ const Gallery = () => {
   const about = useRef(null);
   const galleryWrapper = useRef(null);
 
-  useLayoutEffect(() => {
-    SplitType.create(meet.current);
-    SplitType.create(owner.current);
-    const container = galleryWrapper.current;
+   useGSAP(
+    () => {
+      const createTweens = () => {
+        console.log("ALL LOADED!");
 
-    gsap.set(".gallery-visual-item", { scale: 0 });
-    gsap.set(".lines", { yPercent: 100 });
-    gsap.set(".char", { yPercent: 100 });
+        gsap.set(".gallery-visual-item", { scale: 0 });
 
-    gsap.to(".char", {
-      yPercent: 0,
-      stagger: 0.05,
-      duration: 1.7,
-      ease: Expo.easeInOut,
-    });
+        let scrollTween = gsap.to(galleryWrapper.current, {
+          xPercent: -100,
+          x: () => window.innerWidth,
+          ease: "none",
+          scrollTrigger: {
+            trigger: galleryWrapper.current,
+            start: "top 20px",
+            end: () => "+=" + galleryWrapper.current.offsetWidth + "px",
+            scrub: true,
+            pin: true,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+          },
+        });
 
-    gsap.to(".lines", {
-      yPercent: 0,
-      stagger: 0.05,
-      duration: 1.7,
-      ease: Expo.easeInOut,
-    });
+        const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
 
-    let scrollTween = gsap.to(container, {
-      xPercent: -100,
-      x: () => window.innerWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: "top 90px",
-        end: () => "+=" + container.offsetWidth + "px",
-        scrub: true,
-        pin: true,
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-      },
-    });
+        galleryListImg.forEach((listImg) => {
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: listImg,
+              containerAnimation: scrollTween,
+              toggleActions: "play none none reverse",
+              markers: true,
+            },
+          });
 
-    const galleryListImg = gsap.utils.toArray(".gallery-visual-item");
-
-    galleryListImg.forEach((listImg) => {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: listImg,
-          containerAnimation: scrollTween,
-          toggleActions: "play none none reverse",
-          // markers: true,
-        },
-      });
-
-      tl.to(listImg, {
-        scale: 1,
-        duration: 1.5,
-        ease: Expo.easeOut,
-      });
-    });
-  }, []);
+          tl.to(listImg, {
+            scale: 1,
+            duration: 1.5,
+            ease: Expo.easeOut,
+          });
+        });
+      };
+      window.addEventListener("load", createTweens);
+      return () => window.removeEventListener("load", createTweens);
+    },
+    { scope: galleryWrapper }
+  );
 
   return (
     <main id="gallery">
